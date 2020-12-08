@@ -7,6 +7,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { CourseComponent } from './course/course.component';
 import { TopicComponent } from './topic/topic.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { TopicComponent } from './topic/topic.component';
     WelcomeComponent,
     LoginComponent,
     CourseComponent,
-    TopicComponent
+    TopicComponent,
+    TeacherComponent,
+    UserComponent,
+    AdminComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule
