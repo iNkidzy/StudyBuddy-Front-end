@@ -13,6 +13,10 @@ import { AdminComponent } from './admin/admin.component';
 import { CommentComponent } from './comment/comment.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { NavbarWelcomeComponent } from './welcome/navbar-welcome/navbar-welcome.component';
+import { NavbarUserComponent } from './user/navbar-user/navbar-user.component';
+import { NavbarTeacherComponent } from './teacher/navbar-teacher/navbar-teacher.component';
+import { NavbarAdminComponent } from './admin/navbar-admin/navbar-admin.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {ReactiveFormsModule} from '@angular/forms';
     TeacherComponent,
     UserComponent,
     AdminComponent,
-    CommentComponent
+    CommentComponent,
+    NavbarWelcomeComponent,
+    NavbarUserComponent,
+    NavbarTeacherComponent,
+    NavbarAdminComponent
   ],
   imports: [
     BrowserModule,
