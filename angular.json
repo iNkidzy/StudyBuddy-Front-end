@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "StudyBuddy"
+  "defaultProject": "StudyBuddy",
+  "cli": {
+    "analytics": "1eb23c5f-eeab-40de-8855-40b86511b80d"
+  }
 }
