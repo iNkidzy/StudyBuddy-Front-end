@@ -31,4 +31,20 @@ height: 340px;
 
   margin-bottom: 300px;
   margin-left: 700px;
+  display-inside: ruby-base-container;
 }
+
+
+#listadmin{
+
+ font-size: 20px;
+ --bs-font-sans-serif-font-family: "Apple SD Gothic Neo";
+
+}
+
+#Header2{
+
+  color: #d9d9d9;
+  --bs-font-sans-serif-font-family: system-ui, "Apple SD Gothic Neo", bold;
+}
+

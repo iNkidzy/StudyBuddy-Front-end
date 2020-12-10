@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html dir="auto" lang="en">
-<meta charset="utf-8">
+<meta charset="UTF-8">
+
 
 <main>
   <div class="container-fluid" style="padding: 0;" >
@@ -35,44 +36,45 @@
                            <!-- Show All Admins-->
 
     <div class="container-md">
-      <h3>Hello Admin! Here are your fellow friends: </h3>
-      <div class="row" style="border-color: black">
-      <ul>
-        <li *ngFor="let admin of Admins">Name:{{admin.name}}, Username:{{admin.username}}, Email:{{admin.email}}</li>
+      <h3 style="padding: 20px">Hello Admin! Here are your fellow friends: </h3>
+
+      <ul style="background: #f2f2f2; ">
+        <ul id="listadmin">
+        <li *ngFor="let admin of Admins"><a>Username:   </a> {{admin.name}}<br><a>Email:  </a>{{admin.email}}
+
+        </li>
+        </ul>
       </ul>
-      </div>
+
     </div>
 
 
-<div class="container-md">
+<div class="container-lg" style="background: #262626;" >
 
   <form class="row gx-3 gy-2 align-items-center" id = "formRead" action="#">
-    <div class="form-group">
-      <legend id="header1" aria-describedby="emailHelp">
+    <div class="form-group" style="background:#262626">
+      <legend aria-describedby="emailHelp">
         <small id="Header2" class="form-text">Hey! Did you know that you can create a new Admin here:</small>
       </legend>
       <div>
-        <label for="name1">Name:</label><br>
+        <label for="name1" style="color: #d9d9d9">Username:</label><br>
         <input type="text" class="form-control" id="name1" name="name" value=""><br>
-      </div>
-      <div>
-        <label for="username1">Username:</label><br>
-        <input type="text" class="form-control" id="username1" name="lastName" value=""><br><br>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon2">@</span>
         <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
       </div>
 
+      <div  style="margin-left: 330px">
       <input class="btn btn-outline-info" id="inputSubmit" type="submit" value="Submit">
-
+      </div>
                                     <!-- json data validation -->
-      <p>
+      <p style="color: #d9d9d9" >
         Form Value: {{ profileForm.value | json }}
       </p>
 
 
-      <p>
+      <p style="color: #d9d9d9">
         Form Status: {{ profileForm.status }}
       </p>
 

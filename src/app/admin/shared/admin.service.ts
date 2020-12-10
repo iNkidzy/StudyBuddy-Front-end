@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {environment} from '../../../environments/environment';
 import {Admin} from './admin.model';
 
 const httpOptions = {
@@ -20,27 +19,27 @@ export class AdminService {
 
 // Create
   create(admin: Admin): Observable<Admin> {
-    return this.http.post<Admin>('https://localhost:63300/api/admin', admin); // check url
+    return this.http.post<Admin>('https://localhost:51961/api/admin', admin);
   }
 
   // GetAllAdmins
   getAdmins(): Observable<Admin[]> {
-     return this.http.get<Admin[]>('https://localhost:46296/api/admins'); // check
+     return this.http.get<Admin[]>('https://localhost:51961/api/user'); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
    //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
     // get users from api
-   // return this.http.get<Admin[]>(environment.apiUrl + '/api/admins/', httpOptions);
+   // return this.http.get<Admin[]>(environment.apiUrl + '/admins/', httpOptions);
   }
 
   // GetCats byID
   findById(id: number): Observable<Admin> {
-    return this.http.get<Admin>('https://localhost:46296/api/admins/' + id);
+    return this.http.get<Admin>('https://localhost:51961/api/admins/' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<Admin> {
-    return this.http.delete<Admin>('https://localhost:46296/api/admins/' + id);
+    return this.http.delete<Admin>('https://localhost:51961/api/admins/' + id);
   }
 
   // Add Edit Cats Here:
