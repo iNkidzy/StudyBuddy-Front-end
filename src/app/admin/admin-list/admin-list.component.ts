@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, Validators} from '@angular/forms';
+import {Admin} from '../shared/admin.model';
+import {AdminService} from '../shared/admin.service';
 
 export type EditorType = 'name' | 'profile';
 
@@ -14,8 +16,23 @@ export class AdminListComponent implements OnInit {
     Username: [''],
     Email: ['']
   });
-  constructor(private fb: FormBuilder) {
+
+
+  Admins: Admin[];
+  errormessage = '';
+
+  constructor(private fb: FormBuilder, private adminService: AdminService) {
   }
+
   ngOnInit(): void {
+    this.adminService.getAdmins()
+      .subscribe(
+        admins => {
+          this.Admins = admins;
+        },
+        error => {
+          this.errormessage = error.message;
+        });
   }
 }
+

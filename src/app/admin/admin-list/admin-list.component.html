@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="auto" lang="en">
 <meta charset="utf-8">
 
-<body>
-
 <main>
-  <div class="sf-container" >
-  <!--  <div class="row justify-content-center"> -->
-    <!--  <div class="col-md-5 col-md-offset-2"> -->
+  <div class="container-fluid" style="padding: 0;" >
+
 
                             <!-- slideshow -->
-  <div id="main" class="carousel slide" data-bs-ride="carousel" style="z-index: 5">
+
+  <div id="main" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="/assets/coffee.jpg" class="img-fluid w-100" alt="...">
@@ -34,105 +32,57 @@
       <span class="visually-hidden">Next</span>
     </a>
   </div>
+                           <!-- Show All Admins-->
 
-
-
-    <!-- createAdmin -->
-    <!--   <button class="btn-group" onclick="openAdmin()" data-dismiss="alert" id="addadmin">New Admin</button> -->
-
-<div id="boxform">
-    <form class="row gx-3 gy-2 align-items-center" id = "form" action="#" onsubmit="createAdmin(Element)">
-      <div class="form-group">
-        <legend id="title" aria-describedby="emailHelp">
-          <small id="Header" class="form-text">Please fill out all fields to create a new admin</small>
-        </legend>
-        <div>
-          <label for="name">Name:</label><br>
-          <input type="text" class="form-control" id="name" name="name" value=""><br>
-        </div>
-        <div>
-          <label for="username">Username:</label><br>
-          <input type="text" class="form-control" id="username" name="lastName" value=""><br><br>
-        </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-          </div>
-
-
-        <input class="btn btn-outline-info" id="input" type="submit" value="Submit">
-
+    <div class="container-md">
+      <h3>Hello Admin! Here are your fellow friends: </h3>
+      <div class="row" style="border-color: black">
+      <ul>
+        <li *ngFor="let admin of Admins">Name:{{admin.name}}, Username:{{admin.username}}, Email:{{admin.email}}</li>
+      </ul>
       </div>
-    </form>
+    </div>
+
+
+<div class="container-md">
+
+  <form class="row gx-3 gy-2 align-items-center" id = "formRead" action="#">
+    <div class="form-group">
+      <legend id="header1" aria-describedby="emailHelp">
+        <small id="Header2" class="form-text">Hey! Did you know that you can create a new Admin here:</small>
+      </legend>
+      <div>
+        <label for="name1">Name:</label><br>
+        <input type="text" class="form-control" id="name1" name="name" value=""><br>
+      </div>
+      <div>
+        <label for="username1">Username:</label><br>
+        <input type="text" class="form-control" id="username1" name="lastName" value=""><br><br>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">@</span>
+        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+      </div>
+
+      <input class="btn btn-outline-info" id="inputSubmit" type="submit" value="Submit">
+
+                                    <!-- json data validation -->
+      <p>
+        Form Value: {{ profileForm.value | json }}
+      </p>
+
+
+      <p>
+        Form Status: {{ profileForm.status }}
+      </p>
+
+    </div>
+  </form>
 </div>
 
-    <script>
 
-      function openAdmin() {
-        document.getElementById('form').style.display = 'blocked';
-      }
-      function createAdmin(event){
-        event.preventDefault()
-        const firstName = document.getElementById('firstName').value;
-        const lastName = +document.getElementById('lastName').value;
-        const address = document.getElementById('address').value;
-        const phoneNumber = +document.getElementById('phoneNumber').value;
-        const email = +document.getElementById('email').value;
-        const admins = {
-          FirstName: firstName,
-          LastName: lastName,
-          Address: address,
-          PhoneNumber: phoneNumber,
-          Email: email
-        };
-        console.log(admins);
-
-        fetch('https://localhost:6330/api/admin', {
-          method: 'POST',
-          body: JSON.stringify(admins)
-        }).then(res => {
-          console.log('Request complete! response:', res);
-
-        }).catch(err => {
-
-          alert(err);
-          console.error(err);
-        });
-      }
-
-      function loadAdmins(){
-        fetch('https://localhost:6300/api/admin')
-            .then(response => response.json())
-            .then(admins =>{
-              console.log(admins);
-              let datatags = "";
-              admins.forEach(admin =>{
-                datatags += "<h2>" + admin.name + "<h2>"
-              })
-              document.getElementById("main").innerHTML= datatags;
-            })
-
-      }
-
-
-    </script>
-
-
-
-
-    <p>
-      Form Value: {{ profileForm.value | json }}
-    </p>
-
-
-    <p>
-      Form Status: {{ profileForm.status }}
-    </p>
-
-  </div>
-      </main>
-   </body>
-
+     </div>
+  </main>
 </html>
 
 

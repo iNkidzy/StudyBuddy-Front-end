@@ -1,19 +1,18 @@
 #form{
   border-style: solid;
   border-color: black;
-  border-width: 2px;
+  border-width: 1px;
 
-  background-color: lightcyan;
+  background-color: white;
 
   margin-right: 100px;
   margin-left: 3px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 #boxform{
   margin-top: 10px;
-  margin-right: 890px;
-  margin-left: 0px;
+  margin-right: 590px;
   width: 540px;
 
 }
@@ -25,6 +24,11 @@
 }
 
 #main{
-height: 800px;
+height: 340px;
 }
 
+#formRead{
+
+  margin-bottom: 300px;
+  margin-left: 700px;
+}
