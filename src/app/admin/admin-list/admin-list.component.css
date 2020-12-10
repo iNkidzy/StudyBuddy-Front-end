@@ -1,1 +1,16 @@
+#form{
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 
+  background-color: lightcyan;
+
+  margin-right: 100px;
+  margin-left: 3px;
+}
+
+#boxform{
+  margin-right: 790px;
+  margin-left: 0px;
+  width: 500px;
+}
