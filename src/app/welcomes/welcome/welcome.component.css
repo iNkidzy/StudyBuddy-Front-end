@@ -1,0 +1,16 @@
+#dude{
+  position: absolute;
+  right:380px;
+  width: 160px;
+}
+
+#carouselExampleSlidesOnly{
+padding-right: 600px;
+  width: 1000px;
+  image-rendering: crisp-edges;
+align-content: stretch;
+}
+
+
+
+
