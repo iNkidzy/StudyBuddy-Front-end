@@ -1,1 +1,149 @@
-<p>admin-list works!</p>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<meta charset="utf-8">
+
+<body>
+
+<main>
+  <div class="sf-container" >
+  <!--  <div class="row justify-content-center"> -->
+    <!--  <div class="col-md-5 col-md-offset-2"> -->
+
+                            <!-- slideshow -->
+  <div id="main" class="carousel slide" data-bs-ride="carousel" style="z-index: 5">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/assets/dontgiveup.jpg" class="img-fluid w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/epic1.jpg" class="img-fluid w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#main" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#main" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+
+
+
+    <!-- createAdmin -->
+
+    <div class="d-grid gap-2 d-md-block">
+      <button class="btn btn-outline-secondary" type="button" onclick="loadAdmins()">AdminForm</button>
+      <button class="btn btn-outline-secondary" type="button">Edit</button>
+      <button class="btn btn-outline-secondary" type="button">Delete</button>
+    </div>
+
+    <!--   <button class="btn-group" onclick="openAdmin()" data-dismiss="alert" id="addadmin">New Admin</button> -->
+
+<div>
+    <form id = "form" action="#" onsubmit="createAdmin(Element)">
+      <div class="form-group">
+        <legend id="title" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">Please fill out all fields to create a new admin</small>
+        </legend>
+        <div>
+          <label for="firstName">First Name:</label><br>
+          <input type="text" class="form-control" id="firstName" name="firstName" value=""><br>
+        </div>
+        <div>
+          <label for="lastName">Last Name:</label><br>
+          <input type="text" class="form-control" id="lastName" name="lastName" value=""><br><br>
+        </div>
+        <div>
+          <label for="address">Address Information:</label><br>
+          <input type="text" class="form-control" id="address" name="address" value=""><br><br>
+        </div>
+        <div>
+          <label for="phoneNumber">Phone Number: </label><br>
+          <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" value=""><br><br>
+        </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+
+
+        <input class="btn btn-outline-info" id="input" type="submit" value="Submit">
+
+      </div>
+    </form>
+</div>
+
+    <script>
+
+      function openAdmin() {
+        document.getElementById('form').style.display = 'blocked';
+      }
+      function createAdmin(event){
+        event.preventDefault()
+        const firstName = document.getElementById('firstName').value;
+        const lastName = +document.getElementById('lastName').value;
+        const address = document.getElementById('address').value;
+        const phoneNumber = +document.getElementById('phoneNumber').value;
+        const email = +document.getElementById('email').value;
+        const admins = {
+          FirstName: firstName,
+          LastName: lastName,
+          Address: address,
+          PhoneNumber: phoneNumber,
+          Email: email
+        };
+        console.log(admins);
+
+        fetch('https://localhost:6330/api/admin', {
+          method: 'POST',
+          body: JSON.stringify(admins)
+        }).then(res => {
+          console.log('Request complete! response:', res);
+
+        }).catch(err => {
+
+          alert(err);
+          console.error(err);
+        });
+      }
+
+      function loadAdmins(){
+        fetch('https://localhost:6300/api/admin')
+            .then(response => response.json())
+            .then(admins =>{
+              console.log(admins);
+              let datatags = "";
+              admins.forEach(admin =>{
+                datatags += "<h2>" + admin.name + "<h2>"
+              })
+              document.getElementById("main").innerHTML= datatags;
+            })
+
+      }
+
+
+    </script>
+
+
+
+
+    <p>
+      Form Value: {{ profileForm.value | json }}
+    </p>
+
+
+    <p>
+      Form Status: {{ profileForm.status }}
+    </p>
+
+
+
+  </div>
+      </main>
+   </body>
+</html>
+
+
+

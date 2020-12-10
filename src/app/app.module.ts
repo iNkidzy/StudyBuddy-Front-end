@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavbarWelcomeComponent } from './welcomes/shared/navbar-welcome/navbar-welcome.component';
 import { NavbarUserComponent } from './user/shared/navbar-user/navbar-user.component';
 import { NavbarTeacherComponent } from './teacher/shared/navbar-teacher/navbar-teacher.component';
@@ -33,7 +33,6 @@ import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.com
     NavbarUserComponent,
     NavbarTeacherComponent,
     NavbarAdminComponent,
-    AdminListComponent,
     CommentListComponent,
     CourseListComponent,
     TeacherListComponent,
@@ -44,7 +43,8 @@ import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
