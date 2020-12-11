@@ -1,6 +1,6 @@
 import {Usertype} from './usertype.model';
-import {Course} from '../../course/shared/course.model';
-import {Topic} from '../../topic/ shared/topic.model';
+import {Course} from './course.model';
+import {Topic} from './topic.model';
 
 export interface User{
   id: number;

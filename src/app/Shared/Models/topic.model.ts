@@ -1,4 +1,4 @@
-import {Course} from '../../course/shared/course.model';
+import {Course} from './course.model';
 
 export interface Topic{
   id: number;
