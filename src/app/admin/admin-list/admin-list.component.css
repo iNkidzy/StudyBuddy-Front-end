@@ -1,15 +1,3 @@
-#form{
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-
-  background-color: white;
-
-  margin-right: 100px;
-  margin-left: 3px;
-  margin-bottom: 10px;
-}
-
 #boxform{
   margin-top: 10px;
   margin-right: 590px;
@@ -17,8 +5,19 @@
 
 }
 
-#input{
+#formBox{
+  margin-top: 10px;
+  margin-left: 470px;
+  width: 540px;
+}
+#submitEdit{
+  position: revert;
+  padding-right: 20px;
 
+
+}
+
+#input{
   margin-right: 500px;
   margin-left: 170px;
 }
@@ -29,22 +28,61 @@ height: 340px;
 
 #formRead{
 
-  margin-bottom: 300px;
+  margin-bottom: 20px;
   margin-left: 700px;
   display-inside: ruby-base-container;
 }
 
+#formUpdate{
+  margin-bottom: 20px;
+  margin-right:700px;
+  display-inside: ruby-text-container;
+
+}
+
+#formDelete{
+  margin-bottom: 20px;
+  margin-right:620px;
+  display-inside: ruby-text-container;
+}
 
 #listadmin{
 
- font-size: 20px;
+ font-size: 25px;
  --bs-font-sans-serif-font-family: "Apple SD Gothic Neo";
 
 }
 
 #Header2{
-
+  font-size: 34px;
   color: #d9d9d9;
   --bs-font-sans-serif-font-family: system-ui, "Apple SD Gothic Neo", bold;
 }
 
+#HeaderEdit{
+  font-size: 34px;
+  color: #d9d9d9;
+  --bs-font-sans-serif-font-family: system-ui, "Apple SD Gothic Neo", bold;
+}
+
+
+#selectDelete{
+   margin-bottom: 20px;
+   margin-left: 50px;
+}
+
+#Headerdelete{
+  position: inherit;
+  padding-top: 10px;
+  padding-bottom: 240px;
+  font-size: 30px;
+  color: #d9d9d9;
+  --bs-font-sans-serif-font-family: system-ui, "Apple SD Gothic Neo", bold;
+
+}
+
+#inputDelete{
+  position: absolute;
+  margin-left: 220px;
+
+}

@@ -19,7 +19,7 @@ export class AdminService {
 
 // Create
   create(admin: Admin): Observable<Admin> {
-    return this.http.post<Admin>('https://localhost:51961/api/admin', admin);
+    return this.http.post<Admin>('https://localhost:51961/api/user', admin);
   }
 
   // GetAllAdmins
@@ -34,12 +34,12 @@ export class AdminService {
 
   // GetCats byID
   findById(id: number): Observable<Admin> {
-    return this.http.get<Admin>('https://localhost:51961/api/admins/' + id);
+    return this.http.get<Admin>('https://localhost:51961/api/user/' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<Admin> {
-    return this.http.delete<Admin>('https://localhost:51961/api/admins/' + id);
+    return this.http.delete<Admin>('https://localhost:51961/api/user/' + id);
   }
 
   // Add Edit Cats Here:
