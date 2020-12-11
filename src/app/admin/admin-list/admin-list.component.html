@@ -40,7 +40,7 @@
 
       <ul style="background: #d9d9d9; ">
         <ul id="listadmin">
-        <li *ngFor="let admin of Admins"><a>Username:   </a> {{admin.username}}<br><a>Email:  </a>{{admin.email}}
+        <li *ngFor="let admin of Admins"><a>Username:   </a> {{admin.name}}<br><a>Email:  </a>{{admin.email}}
 
         </li>
         </ul>
@@ -64,6 +64,13 @@
         <span class="input-group-text" id="basic-addon2">@</span>
         <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
       </div>
+
+      <select class="form-select" id="selectType" aria-label="Default select example">
+        <option selected routerLinkActive="active">Choose to usertype...</option>
+        <option value="1">Admin</option>
+        <option value="2">Teacher</option>
+        <option value="3">User</option>
+      </select>
 
       <div  style="margin-left: 330px">
       <input class="btn btn-outline-info" id="inputSubmit" type="submit" value="Create">

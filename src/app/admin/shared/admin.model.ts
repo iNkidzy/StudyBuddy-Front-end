@@ -1,5 +1,5 @@
 export interface Admin{
-  username: string;
+  name: string;
   email: string;
   //  isComplete: boolean;
 

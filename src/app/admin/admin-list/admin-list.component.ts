@@ -12,7 +12,7 @@ export type EditorType = 'name' | 'profile';
 })
 export class AdminListComponent implements OnInit {
   profileForm = this.fb.group({
-    Username: ['', Validators.required],
+    Name: ['', Validators.required],
     Email: ['']
   });
 
