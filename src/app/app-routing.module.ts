@@ -6,9 +6,9 @@ import {LoginComponent} from './login/login.component';
 import {AdminListComponent} from './admin/admin-list/admin-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
 import {CommentListComponent} from './comment/comment-list/comment-list.component';
-import {TeacherListComponent} from './teacher/teacher-list/teacher-list.component';
+import {TeacherListComponent} from './TypeUser/teacher/teacher-list/teacher-list.component';
 import {TopicListComponent} from './topic/topic-list/topic-list.component';
-import {UserListComponent} from './user/user-list/user-list.component';
+import {UserListComponent} from './TypeUser/user/user-list/user-list.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
 
 
