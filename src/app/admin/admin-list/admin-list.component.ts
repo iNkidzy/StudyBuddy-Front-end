@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {FormArray, FormBuilder, FormControl, Validators} from '@angular/forms';
+import {Admin} from '../shared/admin.model';
+import {AdminService} from '../shared/admin.service';
+
+export type EditorType = 'name' | 'profile';
 
 @Component({
   selector: 'app-admin-list',
@@ -6,10 +11,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-list.component.css']
 })
 export class AdminListComponent implements OnInit {
+  profileForm = this.fb.group({
+    Name: ['', Validators.required],
+    Email: ['']
+  });
 
-  constructor() { }
 
-  ngOnInit(): void {
+  Admins: Admin[];
+  errormessage = '';
+
+  constructor(private fb: FormBuilder, private adminService: AdminService) {
   }
 
+  ngOnInit(): void {
+    this.adminService.getAdmins()
+      .subscribe(
+        admins => {
+          this.Admins = admins;
+        },
+        error => {
+          this.errormessage = error.message;
+        });
+  }
 }
+

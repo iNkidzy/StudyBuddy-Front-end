@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavbarWelcomeComponent } from './welcomes/shared/navbar-welcome/navbar-welcome.component';
 import { NavbarUserComponent } from './user/shared/navbar-user/navbar-user.component';
 import { NavbarTeacherComponent } from './teacher/shared/navbar-teacher/navbar-teacher.component';
@@ -17,34 +17,31 @@ import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
 import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.component';
+import { NavbarCourseComponent } from './course/shared/navbar-course/navbar-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     LoginComponent,
-    CourseListComponent,
-    TopicListComponent,
-    TeacherListComponent,
-    UserListComponent,
-    AdminListComponent,
-    CommentListComponent,
     NavbarWelcomeComponent,
     NavbarUserComponent,
     NavbarTeacherComponent,
     NavbarAdminComponent,
+    NavbarCourseComponent,
     AdminListComponent,
     CommentListComponent,
     CourseListComponent,
     TeacherListComponent,
     TopicListComponent,
-    UserListComponent,
+    UserListComponentt
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
