@@ -38,7 +38,7 @@ import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.com
     CourseListComponent,
     TeacherListComponent,
     TopicListComponent,
-    UserListComponent
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
