@@ -6,6 +6,10 @@ import {OnInit, Component} from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+
   ngOnInit(): void {
+
   }
+
 }
+
