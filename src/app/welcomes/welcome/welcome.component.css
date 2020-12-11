@@ -15,20 +15,22 @@
 }
 #arrow{
   position: absolute;
-  max-width:10%;
+  max-width:14%;
   height:auto;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  margin-left: 660px;
+  margin-left: 690px;
+  margin-bottom: 500px;
+  -webkit-transform:rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 #pointup{
   position: absolute;
-  max-width: 30%;
+  max-width: 32%;
   height: auto;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  margin-left: 350px;
+  margin-left: 370px;
   margin-top: 200px;
 }
 #text-box{
@@ -83,9 +85,9 @@ blockquote {
   text-align: center;
   color:#fff;
   background: grey;
-  opacity: 90%;
+  opacity: 80%;
   margin-right: 40px;
-  margin-top: 460px;
+  margin-top: 480px;
   padding: 8px 10px 6px 6px;
   border-radius: 30px 30px 40px 40px; /*TL TR BR BL*/
 
