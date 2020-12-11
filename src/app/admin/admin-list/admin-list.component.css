@@ -90,5 +90,11 @@ height: 340px;
   margin-top: 98px;
   background-image: url("src/assets/Deleteicon.png");
 
+}
 
+#hiAdmin{
+    font-size: 40px;
+    margin-left: 10px;
+    color: black;
+  --bs-font-sans-serif-font-family: system-ui, "Apple SD Gothic Neo", bold;
 }
