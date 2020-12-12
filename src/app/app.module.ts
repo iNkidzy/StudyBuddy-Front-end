@@ -16,7 +16,11 @@ import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { UserListComponent } from './TypeUser/user/user-list/user-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
 import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.component';
+
+import { DashboardComponent } from './TypeUser/dashboard/dashboard.component';
+
 import { TopicPageComponent } from './topic/topic-page/topic-page.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +36,7 @@ import { TopicPageComponent } from './topic/topic-page/topic-page.component';
     TeacherListComponent,
     TopicListComponent,
     UserListComponent,
+    DashboardComponent,
     TopicPageComponent
   ],
   imports: [
