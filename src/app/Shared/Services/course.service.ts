@@ -1,9 +1,8 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
 import {Course} from '../Models/course.model';
 import {Topic} from '../Models/topic.model';
-import 'rxjs/add/observable/of';
+import {Observable} from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
