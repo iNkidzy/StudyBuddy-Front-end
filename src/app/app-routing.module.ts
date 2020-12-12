@@ -9,11 +9,13 @@ import {TeacherListComponent} from './TypeUser/teacher/teacher-list/teacher-list
 import {TopicListComponent} from './topic/topic-list/topic-list.component';
 import {UserListComponent} from './TypeUser/user/user-list/user-list.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
+import {TopicPageComponent} from './topic/topic-page/topic-page.component';
 
 
 
 let routes: Routes;
 routes = [
+  {path: 'topic-page', component: TopicPageComponent},
   {path: 'course-list', component: CourseListComponent},
   {path: 'teacher-list', component: TeacherListComponent},
   {path: 'topic-list', component: TopicListComponent},
