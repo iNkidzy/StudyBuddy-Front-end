@@ -5,18 +5,18 @@ import {LoginComponent} from './login/login.component';
 
 import {AdminListComponent} from './admin/admin-list/admin-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
-import {CommentListComponent} from './comment/comment-list/comment-list.component';
 import {TeacherListComponent} from './TypeUser/teacher/teacher-list/teacher-list.component';
 import {TopicListComponent} from './topic/topic-list/topic-list.component';
 import {UserListComponent} from './TypeUser/user/user-list/user-list.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
+import {TopicPageComponent} from './topic/topic-page/topic-page.component';
 
 
 
 let routes: Routes;
 routes = [
+  {path: 'topic-page', component: TopicPageComponent},
   {path: 'course-list', component: CourseListComponent},
-  {path: 'comment-list', component: CommentListComponent},
   {path: 'teacher-list', component: TeacherListComponent},
   {path: 'topic-list', component: TopicListComponent},
   {path: 'user', component: UserListComponent},

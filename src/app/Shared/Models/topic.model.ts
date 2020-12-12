@@ -5,5 +5,6 @@ export interface Topic{
   name: string;
   mainBody: string;
   course: Course;
+  courseId: number;
   comment: Comment[];
 }

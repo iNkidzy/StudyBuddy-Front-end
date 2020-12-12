@@ -1,1 +1,13 @@
 <p>topic-list works!</p>
+<div>
+  <div *ngIf="!err && topics$ | async as topics else loading">
+      <h3 *ngFor="let topic of topics">
+      {{topic.id}} {{topic.name}}  - {{topic.course}}
+      <button routerLink="/topic-list/{{topic.id}}">Topic show</button>
+    </h3>
+  </div>
+  <p *ngIf="err">ERRROOOR {{err}}</p>
+  <ng-template #loading>
+    <p>Loading ...</p>
+  </ng-template>
+</div>

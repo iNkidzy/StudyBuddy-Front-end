@@ -10,14 +10,17 @@ import { NavbarWelcomeComponent } from './welcomes/shared/navbar-welcome/navbar-
 import { NavbarUserComponent } from './Shared/Navbar/navbar-user/navbar-user.component';
 import { NavbarTeacherComponent } from './Shared/Navbar/navbar-teacher/navbar-teacher.component';
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
-import { CommentListComponent } from './comment/comment-list/comment-list.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
 import { TeacherListComponent } from './TypeUser/teacher/teacher-list/teacher-list.component';
 import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { UserListComponent } from './TypeUser/user/user-list/user-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
 import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.component';
+
 import { DashboardComponent } from './TypeUser/dashboard/dashboard.component';
+
+import { TopicPageComponent } from './topic/topic-page/topic-page.component';
+
 
 @NgModule({
   declarations: [
@@ -29,12 +32,12 @@ import { DashboardComponent } from './TypeUser/dashboard/dashboard.component';
     NavbarTeacherComponent,
     NavbarAdminComponent,
     AdminListComponent,
-    CommentListComponent,
     CourseListComponent,
     TeacherListComponent,
     TopicListComponent,
     UserListComponent,
-    DashboardComponent
+    DashboardComponent,
+    TopicPageComponent
   ],
   imports: [
     BrowserModule,
