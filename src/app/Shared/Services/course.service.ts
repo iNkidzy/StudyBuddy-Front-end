@@ -1,7 +1,9 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {Course} from '../Models/course.model';
+import {Topic} from '../Models/topic.model';
+import 'rxjs/add/observable/of';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -41,6 +43,7 @@ export class CourseService {
   delete(id: number): Observable<Course> {
     return this.http.delete<Course>('https://localhost:51961/api/course/' + id);
   }
+
 
   // Add Edit Teachers Here:
   // Update by ID
