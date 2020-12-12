@@ -1,14 +1,16 @@
-<ul class="courses" id="tatters">
-  <li *ngFor="let course of courses">
-    <div class="card-group">
-      <div class="card border-dark mb-3card border-light mb-3" style="width: 18rem;">
+
+<div class="container-fluid" id="eggs" >
+  <div class="row" >
+    <div class="col-lg-4 mx-auto bg-light border-dark lg-4" *ngFor="let course of courses" id="bacon">
+      <div class="card" id="tatters">
         <img src="assets\img\codestuff.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{course.name}}</h5>
-          <a routerLink="//{{course.id}}" class="btn btn-primary">Go somewhere</a>
-        </div>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4 class="card-title" id="waffles">{{course.name}}</h4>
+          </mdb-card-title>
+          <a routerLink="topic-list/{{course.id}}" class="btn btn-primary" id="pancakes">Go to Course</a>
+        </mdb-card-body>
       </div>
     </div>
-  </li>
-</ul>
-
+  </div>
+</div>
