@@ -2,6 +2,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Topic} from '../Models/topic.model';
+import {environment} from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,6 +15,8 @@ const httpOptions = {
   providedIn: 'root'})
 
 export class TopicService {
+  topicApiUrl = environment.apiUrl;
+
   constructor(private http: HttpClient) {
   }
 
@@ -21,6 +24,7 @@ export class TopicService {
   create(topic: Topic): Observable<Topic> {
     return this.http.post<Topic>('https://localhost:51961/api/topic', topic);
   }
+
 
   // GetAllAdmins
   getTopics(): Observable<Topic[]> {
