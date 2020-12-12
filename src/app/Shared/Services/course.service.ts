@@ -19,12 +19,12 @@ export class CourseService {
 
 // Create
   create(course: Course): Observable<Course> {
-    return this.http.post<Course>('https://localhost:51961/api/course', course);
+    return this.http.post<Course>('https://localhost:44301/api/course', course);
   }
 
   // GetAll
   getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>('https://localhost:51961/api/course'); // check
+    return this.http.get<Course[]>('https://localhost:44301/api/course'); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());

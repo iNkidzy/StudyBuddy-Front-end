@@ -17,7 +17,6 @@ import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { UserListComponent } from './TypeUser/user/user-list/user-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
 import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.component';
-import { NavbarCourseComponent } from './course/shared/navbar-course/navbar-course.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { NavbarCourseComponent } from './course/shared/navbar-course/navbar-cour
     NavbarUserComponent,
     NavbarTeacherComponent,
     NavbarAdminComponent,
-    NavbarCourseComponent,
     AdminListComponent,
     CommentListComponent,
     CourseListComponent,
