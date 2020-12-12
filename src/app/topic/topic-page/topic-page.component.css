@@ -1,16 +1,27 @@
 #box{
 
-  margin-top: 90px;
+  margin-left: 300px;
+  margin-top: 70px;
+  background-color: azure;
 
 }
 
 #header{
+
   font-size: 40px;
   font-family: "Apple SD Gothic Neo";
 }
 
 
-#imgid{
-  margin-right: 900px;
-  background: blue;
+#imgid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: lime;
 }
+
+
+
