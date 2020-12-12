@@ -18,6 +18,7 @@ import { UserListComponent } from './TypeUser/user/user-list/user-list.component
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
 import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.component';
 import { TopicBodyComponent } from './topic/topic-body/topic-body.component';
+import { TopicPageComponent } from './topic/topic-page/topic-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TopicBodyComponent } from './topic/topic-body/topic-body.component';
     TeacherListComponent,
     TopicListComponent,
     UserListComponent,
-    TopicBodyComponent
+    TopicBodyComponent,
+    TopicPageComponent
   ],
   imports: [
     BrowserModule,
