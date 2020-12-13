@@ -1,13 +1,18 @@
 #box{
 
-  margin-left: 300px;
-  margin-top: 70px;
-  background-color: azure;
+  margin-right: 400px;
+  margin-left: 350px;
+  margin-top: 400px;
+  background-color: lightseagreen;
 
+  border-color: black;
+  border-radius: 50px 50px 50px;
+  border-width: thick;
 }
 
 #header{
-
+  margin-left: 300px;
+  margin-top: 70px;
   font-size: 40px;
   font-family: "Apple SD Gothic Neo";
 }
@@ -24,4 +29,13 @@
 }
 
 
+#body{
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: lime;
+}

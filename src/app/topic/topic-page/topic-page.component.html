@@ -1,25 +1,41 @@
-
+<body is="body">
 <div class="container-fluid px-0">
-
-
-
 
 
 <img src="/assets/blue.jpg" alt="coffeee" id="imgid">
 
-<div id= "box">
- <!-- <ng-container *ngIf="userType.getUsers(userType.findById(topics))">
-      <li *ngFor=" let topic of topics">
-        <p>Topic: {{topics}}</p>
-      </li>
-  </ng-container> -->
-
   <h3 id="header">
-        Name Of Chosen Topic for Curent User
+    Name Of Chosen Topic for Curent User
 
   </h3>
 
 
-      </div>
-    </div>
+  <p> Topic description:</p>
 
+ <div *ngIf="!err && topics$ | async as topics">
+   <li *ngFor="let topic of topics">
+     <div>
+       id: {{topic.id}} Name: {{topic.name}} Description: {{topic.mainBody}}
+       course: {{topic.course}} courseid: {{topic.courseId}}
+
+       comment:{{topic.comment}}
+
+     </div>
+   </li>
+ </div>
+
+
+
+  <!--   <div id= "box">
+         <p>Comment section:</p>
+         <li *ngFor = "let c of topics.comment">
+         <div>
+       id:{{c.id}} username: {{c.user}} current topic:{{c.topic}}
+       comment: {{c.mainBody}} - DatePosted: {{c.dateTime}}
+           </div>
+          </li>
+       </div> -->
+
+
+     </div>
+</body>
