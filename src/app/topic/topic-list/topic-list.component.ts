@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable, of} from 'rxjs';
 import {Course} from '../../Shared/Models/course.model';
 import {CourseService} from '../../Shared/Services/course.service';
-import {catchError, switchMap, take, tap} from 'rxjs/operators';
-import {TopicService} from '../../Shared/Services/topic.service';
-import {Topic} from '../../Shared/Models/topic.model';
-import {isObservable} from 'rxjs/internal-compatibility';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-topic-list',
@@ -13,13 +9,13 @@ import {isObservable} from 'rxjs/internal-compatibility';
   styleUrls: ['./topic-list.component.css']
 })
 export class TopicListComponent implements OnInit {
- topics$: Observable<Topic[]>;
- id: 1;
+ course: Course;
  err: string;
 
-  constructor(private topicService: TopicService) { }
+  constructor(private route: ActivatedRoute, private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.topics$ = this.topicService.getTopics();
+    this.courseService.findById(1).subscribe(course => {this.course = course;
+    });
   }
 }
