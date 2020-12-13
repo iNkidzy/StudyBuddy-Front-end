@@ -6,5 +6,5 @@ export interface Topic{
   mainBody: string;
   course: Course;
   courseId: number;
-  comment: Comment[];
+  comment: Comment;
 }

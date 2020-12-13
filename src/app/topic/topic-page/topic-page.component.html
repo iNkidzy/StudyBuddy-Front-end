@@ -1,34 +1,45 @@
-<body is="body">
-<div class="container-fluid px-0">
+
+<div class="container-fluid justify-content-center" id="body">
 
 
 <img src="/assets/blue.jpg" alt="coffeee" id="imgid">
 
+
+
   <h3 id="header">
     Name Of Chosen Topic for Curent User
-
   </h3>
 
-
-  <p> Topic description:</p>
-
- <div *ngIf="!err && topics$ | async as topics">
+  <div id="maininfo">
+  <p id="descript"> Topic description:</p>
+  <div id="topicMain">
+ <div *ngIf="topics$ | async as topics">
    <li *ngFor="let topic of topics">
      <div>
-       id: {{topic.id}} Name: {{topic.name}} Description: {{topic.mainBody}}
-       course: {{topic.course}} courseid: {{topic.courseId}}
+       <div>
+       <h5 id="idH">id: {{topic.id}}</h5>
+       </div>
+       <div>
+         <h5 id="NameH">Name:</h5>
+         {{topic.name}}
+       </div>
+       <div>
+         <h5 id="DesH">Description: </h5>
+         {{topic.mainBody}}
+       </div>
 
-       comment:{{topic.comment}}
+       <p id="corsH">course: {{topic.course}} </p>
 
-     </div>
-   </li>
- </div>
+       <p id="cidH" > courseid: {{topic.courseId}} </p>
 
+       <h3 id ="comH"> comment: {{topic.comment}} </h3>
 
-
-  <!--   <div id= "box">
+     <!--  <div id="box">
          <p>Comment section:</p>
-         <li *ngFor = "let c of topics.comment">
+   <li *ngFor = "let c of topics.comment">
+
+
+
          <div>
        id:{{c.id}} username: {{c.user}} current topic:{{c.topic}}
        comment: {{c.mainBody}} - DatePosted: {{c.dateTime}}
@@ -36,6 +47,13 @@
           </li>
        </div> -->
 
-
      </div>
-</body>
+   </li>
+ </div>
+
+</div>
+
+
+  </div>
+</div>
+
