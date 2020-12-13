@@ -1,11 +1,9 @@
 #box{
-
-  margin-right: 400px;
-  margin-left: 350px;
-  margin-top: 400px;
+  margin-left:20px;
+  margin-bottom: 100px;
+  margin-top: 10px;
   background-color: lightseagreen;
 
-  border-color: black;
   border-radius: 50px 50px 50px;
   border-width: thick;
 }
@@ -93,6 +91,12 @@
 }
 
 #comH{
+  margin-left:20px;
+  font-size: 20px;
+  font-family: "Apple SD Gothic Neo";color:white;
+}
+
+#comH1{
   font-size: 20px;
   font-family: "Apple SD Gothic Neo";color:aqua;
 }

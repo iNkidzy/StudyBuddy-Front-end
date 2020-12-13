@@ -13,17 +13,16 @@ import {TopicService} from '../../Shared/Services/topic.service';
 })
 export class TopicPageComponent implements OnInit {
   topics$: Observable<Topic[]>;
-  comment: Comment;
+  topic: Topic;
   id: 1;
   err: string;
   constructor(private route: ActivatedRoute,
               private commentService: CommentService,
               private topicService: TopicService) { }
   ngOnInit(): void {
-    this.commentService.findById(1)
-     .subscribe(comment => {this.comment = comment;
+    this.topicService.findById(1)
+     .subscribe(topic => {this.topic = topic;
      });
     this.topics$ = this.topicService.getTopics();
   }
-
 }
