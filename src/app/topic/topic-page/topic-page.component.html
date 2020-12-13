@@ -5,16 +5,14 @@
 <img src="/assets/blue.jpg" alt="coffeee" id="imgid">
 
 
-
   <h3 id="header">
-    Name Of Chosen Topic for Curent User
+    Name Of Chosen Topic for Current User
   </h3>
 
   <div id="maininfo">
   <p id="descript"> Topic description:</p>
   <div id="topicMain">
- <div *ngIf="topics$ | async as topics">
-   <li *ngFor="let topic of topics">
+
      <div>
        <div>
        <h5 id="idH">id: {{topic.id}}</h5>
@@ -36,25 +34,23 @@
        <h5 id="comH1">Comments:</h5>
        <div id="box">
 
-       <h5 id ="comH"> Hi static! {{topic.comment}} </h5>
+         <li *ngFor = "let c of topic.comments">
 
+           <div>
+             id:{{c.id}} username: {{c.user}} current topic:{{c.topic}}
+             comment: {{c.mainBody}} - DatePosted: {{c.datePosted}}
+           </div>
+         </li>
 
-     <!--   <li *ngFor = "let c of topic.comment">
-
-            <div>
-          id:{{c.id}} username: {{c.user}} current topic:{{c.topic}}
-          comment: {{c.mainBody}} - DatePosted: {{c.dateTime}}
-              </div>
-             </li> -->
+       <h5 id ="comH"> Hi static! {{topic.comments}} </h5>
 
           </div>
 
      </div>
-   </li>
      </div>
 
  </div>
 
   </div>
-</div>
+
 

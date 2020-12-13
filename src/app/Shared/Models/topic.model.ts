@@ -1,4 +1,5 @@
 import {Course} from './course.model';
+import {TopicComment} from './topic-comment.model';
 
 export interface Topic{
   id: number;
@@ -6,5 +7,5 @@ export interface Topic{
   mainBody: string;
   course: Course;
   courseId: number;
-  comment?: Comment[];
+  comments?: TopicComment[];
 }
