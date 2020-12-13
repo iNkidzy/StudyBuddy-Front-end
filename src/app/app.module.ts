@@ -20,6 +20,7 @@ import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.com
 import { DashboardComponent } from './TypeUser/dashboard/dashboard.component';
 
 import { TopicPageComponent } from './topic/topic-page/topic-page.component';
+import { DashboardTeacherComponent } from './TypeUser/dashboard/dashboard-teacher/dashboard-teacher.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { TopicPageComponent } from './topic/topic-page/topic-page.component';
     TopicListComponent,
     UserListComponent,
     DashboardComponent,
-    TopicPageComponent
+    TopicPageComponent,
+    DashboardTeacherComponent
   ],
   imports: [
     BrowserModule,
