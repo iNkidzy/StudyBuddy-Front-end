@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {TopicService} from '../../Shared/Services/topic.service';
-import {UserService} from '../../Shared/Services/user.service';
+import {ActivatedRoute} from '@angular/router';
+import {CommentService} from '../../Shared/Services/comment.service';
 import {Observable} from 'rxjs';
-import {User} from '../../Shared/Models/user.model';
 import {Topic} from '../../Shared/Models/topic.model';
-import {Usertype} from '../../Shared/Models/usertype.model';
+import {TopicService} from '../../Shared/Services/topic.service';
+
 
 @Component({
   selector: 'app-topic-page',
@@ -12,11 +12,17 @@ import {Usertype} from '../../Shared/Models/usertype.model';
   styleUrls: ['./topic-page.component.css']
 })
 export class TopicPageComponent implements OnInit {
- topics: Observable<Topic[]>;
-  constructor(private topic: TopicService, private userType: UserService) { }
-
+  topics$: Observable<Topic[]>;
+  topic: Topic;
+  id: 1;
+  err: string;
+  constructor(private route: ActivatedRoute,
+              private commentService: CommentService,
+              private topicService: TopicService) { }
   ngOnInit(): void {
-
+    this.topicService.findById(1)
+     .subscribe(topic => {this.topic = topic;
+     });
+    this.topics$ = this.topicService.getTopics();
   }
-
 }
