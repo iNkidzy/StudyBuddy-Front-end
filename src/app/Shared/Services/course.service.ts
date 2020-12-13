@@ -1,9 +1,8 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
 import {Course} from '../Models/course.model';
 import {Topic} from '../Models/topic.model';
-import 'rxjs/add/observable/of';
+import {Observable} from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -36,7 +35,7 @@ export class CourseService {
 
   // GetCats byID
   findById(id: number): Observable<Course> {
-    return this.http.get<Course>('https://localhost:51961/api/course/' + id);
+    return this.http.get<Course>('https://localhost:44301/api/course/' + id);
   }
 
   // Delete by ID
