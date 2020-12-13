@@ -11,6 +11,8 @@ const httpOptions = {
   })
 };
 
+const baseURL = 'http://localhost:51961/api/course';
+
 @Injectable({
   providedIn: 'root'})
 
@@ -25,7 +27,7 @@ export class CourseService {
 
   // GetAll
   getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>('https://localhost:51961/api/course'); // check
+    return this.http.get<Course[]>(baseURL); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());

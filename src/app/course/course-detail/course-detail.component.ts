@@ -14,7 +14,7 @@ export class CourseDetailComponent implements OnInit {
   id: number;
   course$: Observable<Course>;
   err: any;
-
+  courses: Course[];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -22,7 +22,11 @@ export class CourseDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.courseService.getCourses();
+    this.courseService.getCourses()
+      .subscribe(
+        courses => {
+          this.courses = courses;
+        });
     this.course$ = this.route.paramMap
       .pipe(
         take(1),
