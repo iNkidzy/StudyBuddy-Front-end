@@ -1,0 +1,19 @@
+<div class="container-fluid justify-content-center" id="body">
+
+
+
+<div style="background: azure">
+<div *ngIf="course$ | async as course">
+  <div *ngFor=" let course of course$">
+      id: {{course.id}} name: {{course.name}}
+
+  <h1>{{course.name}}</h1>
+  <h3>{{course.name | json}}</h3>
+  </div>
+</div>
+<button (click)="delete()">Delete</button>
+<p *ngIf="err" style="color: darkred">{{err.error}}</p>
+
+
+</div>
+</div>

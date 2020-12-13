@@ -20,6 +20,9 @@ import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.com
 import { DashboardComponent } from './TypeUser/dashboard/dashboard.component';
 
 import { TopicPageComponent } from './topic/topic-page/topic-page.component';
+import { CourseCreateComponent } from './course/course-create/course-create.component';
+import { CourseUpdateComponent } from './course/course-update/course-update.component';
+import { CourseDetailComponent } from './course/course-detail/course-detail.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { TopicPageComponent } from './topic/topic-page/topic-page.component';
     TopicListComponent,
     UserListComponent,
     DashboardComponent,
-    TopicPageComponent
+    TopicPageComponent,
+    CourseCreateComponent,
+    CourseUpdateComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,
