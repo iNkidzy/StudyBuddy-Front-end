@@ -48,7 +48,7 @@ export class CourseUpdateComponent implements OnInit {
   }
 
   setAvailableStatus(status): void {
-    const data = {
+    const id = {
       name: this.currentCourse.name,
       description: this.currentCourse.description,
       available: status
