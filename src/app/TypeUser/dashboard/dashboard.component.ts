@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
+import {CommentService} from '../../Shared/Services/comment.service';
 
 @Component({
   selector: 'app-dashboard',

@@ -18,13 +18,15 @@ export class CommentService {
   }
 
 // Create
-  create(topicComment: TopicComment): Observable<TopicComment> {
-    return this.http.post<TopicComment>('https://localhost:51961/api/comment', topicComment);
+
+  create(comment: Comment): Observable<Comment> {
+    return this.http.post<Comment>('https://localhost:63146/api/comment', comment);
   }
 
   // GetAllAdmins
-  getComments(): Observable<TopicComment[]> {
-    return this.http.get<TopicComment[]>('https://localhost:51961/api/comment'); // check
+  getComments(): Observable<Comment[]> {
+    return this.http.get<Comment[]>('https://localhost:63146/api/comment'); // check
+
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());

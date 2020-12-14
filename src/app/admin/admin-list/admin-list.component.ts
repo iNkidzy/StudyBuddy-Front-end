@@ -11,7 +11,7 @@ export type EditorType = 'name' | 'profile';
   styleUrls: ['./admin-list.component.css']
 })
 export class AdminListComponent implements OnInit {
-  profileForm = this.fb.group({
+   filterForm = this.fb.group({
     Name: ['', Validators.required],
     Email: ['']
   });
