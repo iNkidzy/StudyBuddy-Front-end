@@ -15,9 +15,6 @@
 
      <div>
        <div>
-       <h5 id="idH">id: {{topic.id}}</h5>
-       </div>
-       <div>
          <h5 id="NameH">Name:</h5>
          {{topic.name}}
        </div>
@@ -26,31 +23,29 @@
          {{topic.mainBody}}
        </div>
 
-       <p id="corsH">course: {{topic.course}} </p>
-
-       <p id="cidH" > courseid: {{topic.courseId}} </p>
-
-
        <h5 id="comH1">Comments:</h5>
        <div id="box">
 
          <li *ngFor = "let c of topic.comments">
 
-           <div>
-             id:{{c.id}} username: {{c.user}} current topic:{{c.topic}}
-             comment: {{c.mainBody}} - DatePosted: {{c.datePosted}}
+           <div style="margin-left: 10px">
+               Username: {{c.user}} - DatePosted: {{c.datePosted}}
            </div>
+           <div style="margin-left: 20px">{{c.mainBody}}</div>
          </li>
-
-       <h5 id ="comH"> Hi static! {{topic.comments}} </h5>
-
           </div>
 
+       <div>New Comment:</div>
+         <div class="form-floating">
+           <form [formGroup]="commentForm" type="text" (ngSubmit)="saveComment()">
+           <!-- <textarea class="form-control" placeholder="Leave a comment here" id="commentInput" style="height: 70px"></textarea> -->
+           <input type="text" formControlName="mainBody" style="height: 70px" style="width: 250px">
+             <button type="submit">Save</button>
+           </form>
+         </div>
      </div>
-     </div>
-
- </div>
-
   </div>
+ </div>
+</div>
 
 
