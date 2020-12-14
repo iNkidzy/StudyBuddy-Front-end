@@ -1,6 +1,7 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
+import {TopicComment} from '../Models/topic-comment.model';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,6 +18,7 @@ export class CommentService {
   }
 
 // Create
+
   create(comment: Comment): Observable<Comment> {
     return this.http.post<Comment>('https://localhost:63146/api/comment', comment);
   }
@@ -24,6 +26,7 @@ export class CommentService {
   // GetAllAdmins
   getComments(): Observable<Comment[]> {
     return this.http.get<Comment[]>('https://localhost:63146/api/comment'); // check
+
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -32,19 +35,19 @@ export class CommentService {
   }
 
   // GetCats byID
-  findById(id: number): Observable<Comment> {
-    return this.http.get<Comment>('https://localhost:51961/api/comment/' + id);
+  findById(id: number): Observable<TopicComment> {
+    return this.http.get<TopicComment>('https://localhost:51961/api/comment/' + id);
   }
 
   // Delete by ID
-  delete(id: number): Observable<Comment> {
-    return this.http.delete<Comment>('https://localhost:51961/api/comment/' + id);
+  delete(id: number): Observable<TopicComment> {
+    return this.http.delete<TopicComment>('https://localhost:51961/api/comment/' + id);
   }
 
   // Add Edit Comment Here:
   // Update by ID
   /*
-  update(id: number, comment: Comment): Observable<Comment> {
+  update(id: number, comment: TopicComment): Observable<TopicComment> {
     // return this.http.put<Comment>('environment.apiUrl + '/api/comment/'' + id);
     return this.http.put<Comment>(environment.apiUrl + '/api/comment/' + id, {
       name: comment.name,
