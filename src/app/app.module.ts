@@ -23,6 +23,9 @@ import { TopicPageComponent } from './topic/topic-page/topic-page.component';
 import { CourseCreateComponent } from './course/course-create/course-create.component';
 import { CourseUpdateComponent } from './course/course-update/course-update.component';
 import { CourseDetailComponent } from './course/course-detail/course-detail.component';
+import { TopicUpdateComponent } from './topic/topic-update/topic-update.component';
+import { TopicDetailComponent } from './topic/topic-detail/topic-detail.component';
+import { TopicCreateComponent } from './topic/topic-create/topic-create.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { CourseDetailComponent } from './course/course-detail/course-detail.comp
     TopicPageComponent,
     CourseCreateComponent,
     CourseUpdateComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    TopicUpdateComponent,
+    TopicDetailComponent,
+    TopicCreateComponent
   ],
   imports: [
     BrowserModule,
