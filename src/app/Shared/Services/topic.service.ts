@@ -38,7 +38,7 @@ export class TopicService {
 
   // GetCats byID
   findById(id: number): Observable<Topic> {
-    return this.http.get<Topic>('https://localhost:44301/api/topic/' + id);
+    return this.http.get<Topic>('https://localhost:51961/api/topic/' + id);
   }
 
   // Delete by ID

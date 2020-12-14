@@ -17,7 +17,7 @@ import { UserListComponent } from './TypeUser/user/user-list/user-list.component
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
 import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.component';
 
-import { DashboardComponent } from './TypeUser/dashboard/dashboard.component';
+import { DashboardComponent } from './Shared/dashboard/dashboard.component';
 
 import { TopicPageComponent } from './topic/topic-page/topic-page.component';
 
@@ -28,7 +28,10 @@ import { TopicUpdateComponent } from './topic/topic-update/topic-update.componen
 import { TopicDetailComponent } from './topic/topic-detail/topic-detail.component';
 import { TopicCreateComponent } from './topic/topic-create/topic-create.component';
 
-import { DashboardTeacherComponent } from './TypeUser/dashboard/dashboard-teacher/dashboard-teacher.component';
+import { DashboardTeacherComponent } from './TypeUser/dashboard-teacher/dashboard-teacher.component';
+import {AuthenticationService} from './Shared/Services/authentication.service';
+import {AdminService} from './admin/shared/admin.service';
+import {AuthGuard} from './Shared/guards/auth.guard';
 
 
 
@@ -66,7 +69,8 @@ import { DashboardTeacherComponent } from './TypeUser/dashboard/dashboard-teache
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard,
+    AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

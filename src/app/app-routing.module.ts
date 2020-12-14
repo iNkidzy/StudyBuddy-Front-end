@@ -13,11 +13,17 @@ import {TopicPageComponent} from './topic/topic-page/topic-page.component';
 import {CourseDetailComponent} from './course/course-detail/course-detail.component';
 import {CourseUpdateComponent} from './course/course-update/course-update.component';
 import {CourseCreateComponent} from './course/course-create/course-create.component';
+import {AuthGuard} from './Shared/guards/auth.guard';
+import {CommonModule} from '@angular/common';
+import {DashboardComponent} from './Shared/dashboard/dashboard.component';
+import {DashboardTeacherComponent} from './TypeUser/dashboard-teacher/dashboard-teacher.component';
 
 
 
 let routes: Routes;
 routes = [
+  {path: 'dashboard-teacher', component: DashboardTeacherComponent},
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'course-create', component: CourseCreateComponent},
   {path: 'course-update', component: CourseUpdateComponent},
   {path: 'course/:id', component: CourseDetailComponent},
@@ -29,14 +35,14 @@ routes = [
   {path: 'admin', component: AdminListComponent},
   {path: 'welcome', component: WelcomeComponent},
   {path: 'login', component: LoginComponent },
-  {path: '', component: WelcomeComponent},
-
-  // otherwise redirect to welcome
+  {path: '', component: WelcomeComponent, canActivate: [AuthGuard]},
+// otherwise redirect to welcome
   { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

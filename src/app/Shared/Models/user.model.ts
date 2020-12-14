@@ -7,6 +7,8 @@ export interface User{
   type: Usertype;
   name: string;
   email: string;
+  username: string;
+  password: string;
   courses: Course[];
   topics: Topic[];
 }
