@@ -7,9 +7,8 @@
   margin: 40px auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation:
-    typing 2s steps(40, end),
+    typing 2s steps(20, end),
     blink-caret .75s step-end infinite;
-
 }
 .boxed {
   border: 1px solid green ;
@@ -32,8 +31,8 @@
 }
 
 #carousel{
-  position: absolute;
-  top: 390px;
+  position: fixed;
+  top: 590px;
   left: 0;
   bottom: 0;
   width: 30%;
@@ -48,10 +47,10 @@
 }
 #arrow{
   position: fixed;
-  max-width:14%;
+  max-width:15%;
   height:auto;
-  margin-left: 1110px;
-  margin-bottom: 600px;
+  margin-left: 1090px;
+  margin-bottom: 300px;
   -webkit-transform:rotate(270deg);
   -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
@@ -60,21 +59,22 @@
 }
 
 #pointup{
-  position: absolute;
+  position: fixed;
   max-width: 32%;
   height: auto;
   margin-left: 800px;
-  margin-top: 170px;
+  margin-top: 290px;
 }
 #text-box{
   border-style: hidden;
   align-content: center;
-  margin-top: 60px;
-  margin-left: 40px;
+  font-family: "Apple SD Gothic Neo";color: #434343;
+  margin-top: 90px;
+  margin-right: 320px;
+  margin-left: 340px;
   line-height: 25px;
   font-size: 18px;
 }
-
 
 
 .carouselExampleSlidesOnly{
@@ -83,7 +83,7 @@
 }
 
 blockquote {
-  position: absolute;
+  position: fixed;
   font-style:italic;
   line-height:26px;
   font-size:16px;
@@ -91,8 +91,9 @@ blockquote {
   color:#fff;
   background: grey;
   opacity: 80%;
-  margin-right: 25px;
-  margin-top: 340px;
+  margin-left: 325px;
+  margin-right: 15px;
+  margin-top: 520px;
   padding: 8px 10px 6px 6px;
   border-radius: 30px 30px 40px 40px; /*TL TR BR BL*/
 
@@ -116,8 +117,3 @@ blockquote:after {
 }
 
 
-#containermain{
- margin-bottom: 170px;
-  margin-right: 200px;
-
-}
