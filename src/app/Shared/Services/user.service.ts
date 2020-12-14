@@ -25,7 +25,7 @@ export class UserService {
 
   // GetAllAdmins
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('https://localhost:51961/api/user'); // check
+    return this.http.get<User[]>('https://localhost:51961/api/user'); // ('/users') // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -35,7 +35,7 @@ export class UserService {
 
   // GetCats byID
   findById(id: number): Observable<User> {
-    return this.http.get<User>('https://localhost:51961/api/user/' + id);
+    return this.http.get<User>('https://localhost:51961/api/user/' + id); // (`/users/${id}`)
   }
 
   // Delete by ID

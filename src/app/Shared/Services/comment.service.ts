@@ -2,6 +2,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {TopicComment} from '../Models/topic-comment.model';
+import {Topic} from '../Models/topic.model';
+import {User} from '../Models/user.model';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,13 +21,13 @@ export class CommentService {
 
 // Create
 
-  create(comment: Comment): Observable<Comment> {
-    return this.http.post<Comment>('https://localhost:63146/api/comment', comment);
+  create(comment: { topic: Topic; mainBody: any; datePosted: Date; user: User }): Observable<Comment> {
+    return this.http.post<Comment>('https://localhost:51961/api/comment', comment);
   }
 
   // GetAllAdmins
   getComments(): Observable<Comment[]> {
-    return this.http.get<Comment[]>('https://localhost:63146/api/comment'); // check
+    return this.http.get<Comment[]>('https://localhost:51961/api/comment'); // check
 
     // add authorization header with jwt token
     //  httpOptions.headers =

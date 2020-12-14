@@ -47,11 +47,11 @@
   overflow: hidden;
 }
 #arrow{
-  position: absolute;
+  position: fixed;
   max-width:14%;
   height:auto;
   margin-left: 1110px;
-  margin-bottom: 500px;
+  margin-bottom: 600px;
   -webkit-transform:rotate(270deg);
   -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
@@ -92,7 +92,7 @@ blockquote {
   background: grey;
   opacity: 80%;
   margin-right: 25px;
-  margin-top: 330px;
+  margin-top: 340px;
   padding: 8px 10px 6px 6px;
   border-radius: 30px 30px 40px 40px; /*TL TR BR BL*/
 
@@ -116,4 +116,8 @@ blockquote:after {
 }
 
 
+#containermain{
+ margin-bottom: 170px;
+  margin-right: 200px;
 
+}
