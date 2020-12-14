@@ -10,10 +10,10 @@
           Courses
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="down">
-          <li><a class="dropdown-item" routerLink="/course-list">All Courses</a></li>
-          <li><a class="dropdown-item" routerLink="/course-list">Create Course</a></li>
-          <li><a class="dropdown-item" routerLink="/course-list">Edit Course</a></li>
-          <li><a class="dropdown-item" routerLink="/course-list">Delete Course</a></li>
+          <li><a class="dropdown-item" routerLinkActive="active" routerLink="/course-list">All Courses</a></li>
+          <li><a class="dropdown-item" routerLinkActive="active" routerLink="/course-create">Create Course</a></li>
+          <li><a class="dropdown-item" routerLinkActive="active" routerLink="/course-update">Edit Course</a></li>
+          <li><a class="dropdown-item" routerLinkActive="active" routerLink="/course-detail">Delete Course</a></li>
         </ul>
       </li>
   <!--  </ul>
@@ -25,40 +25,13 @@
           Topics
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="tdown">
-          <li><a class="dropdown-item"  routerLink="/topic-list">All Topics</a></li>
-          <li><a class="dropdown-item"  routerLink="/topic-list">Create Topics</a></li>
-          <li><a class="dropdown-item" routerLink="/topic-list">Edit Topics</a></li>
-          <li><a class="dropdown-item" routerLink="/topic-list">Delete Topics</a></li>
+          <li><a class="dropdown-item"  routerLinkActive="active" routerLink="/topic-list">All Topics</a></li>
+          <li><a class="dropdown-item"  routerLinkActive="active" routerLink="/topic-create">Create Topics</a></li>
+          <li><a class="dropdown-item" routerLinkActive="active" routerLink="/topic-update">Edit Topics</a></li>
+          <li><a class="dropdown-item" routerLinkActive="active" routerLink="/topic-detail">Delete Topics</a></li>
         </ul>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarUsersMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Users
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="udown">
-          <li><a class="dropdown-item"  routerLink="/user-list">All Users</a></li>
-          <li><a class="dropdown-item"  routerLink="/user-list">Create User</a></li>
-          <li><a class="dropdown-item" routerLink="/user-list">Edit User</a></li>
-          <li><a class="dropdown-item" routerLink="/user-list">Delete User</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarTeachersMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Teachers
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="tchdown">
-          <li><a class="dropdown-item"  routerLink="/teacher-list">All Teachers</a></li>
-          <li><a class="dropdown-item"  routerLink="/teacher-list">Create Teacher</a></li>
-          <li><a class="dropdown-item" routerLink="/teacher-list">Edit Teacher</a></li>
-          <li><a class="dropdown-item" routerLink="/teacher-list">Delete Teacher</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="#" routerLinkActive="active">Notifications</a>
-      </li>
 
 
 <!-- <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
@@ -71,7 +44,7 @@
         <li><a class="dropdown-item-text" id="txt1" [text]="">Hi Admin!</a></li>
         <li><a class="dropdown-item-text" id="txt2" [text]="">admin@admin.dk</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" routerLink="welcome">Logout</a></li>
+        <li><a class="dropdown-item" routerLink="/welcome">Logout</a></li>
       </ul>
     </li>
 
