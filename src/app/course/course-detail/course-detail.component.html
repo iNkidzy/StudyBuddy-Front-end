@@ -1,0 +1,18 @@
+
+  <div class="col-lg-4 mx-auto bg-light border-dark lg-4" *ngFor="let course of courses">
+    id: {{course.id}} name: {{course.name}}
+  </div>
+
+<div style="background: azure">
+<div *ngIf="course$ | async as courses">
+
+  <h1>{{courses.id}}</h1>
+  <h1>{{courses.name}}</h1>
+  </div>
+</div>
+<button (click)="delete()">Delete</button>
+<p *ngIf="err" style="color: darkred">{{err.error}}</p>
+
+
+
+

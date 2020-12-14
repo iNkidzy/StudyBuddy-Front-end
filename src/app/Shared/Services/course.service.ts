@@ -35,7 +35,7 @@ export class CourseService {
 
   // GetCats byID
   findById(id: number): Observable<Course> {
-    return this.http.get<Course>('https://localhost:44301/api/course/' + id);
+    return this.http.get<Course>('https://localhost:51961/api/course/' + id);
   }
 
   // Delete by ID
@@ -55,6 +55,8 @@ export class CourseService {
       email: course.email,
     });
   }
-
-   */
+  */
+  updateCourse(updatedCourse: Course, currentCourse: any): Observable<Course> {
+    return this.http.put<Course>( 'https://localhost:51961/api/course/' + updatedCourse.id, updatedCourse);
+  }
 }

@@ -1,0 +1,14 @@
+<div class="container-fluid justify-content-center" id="body">
+
+<h1>Create Course:</h1>
+<label>
+  Name:
+  <input type="text" [formControl]="name">
+</label>
+
+
+<button (click)="save()"
+        [disabled]="creating">Save</button>
+
+<h1 *ngIf="errString" style="color: #8b0000">{{errString}}</h1>
+</div>

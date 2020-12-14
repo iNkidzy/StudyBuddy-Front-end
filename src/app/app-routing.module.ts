@@ -10,11 +10,17 @@ import {TopicListComponent} from './topic/topic-list/topic-list.component';
 import {UserListComponent} from './TypeUser/user/user-list/user-list.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
 import {TopicPageComponent} from './topic/topic-page/topic-page.component';
+import {CourseDetailComponent} from './course/course-detail/course-detail.component';
+import {CourseUpdateComponent} from './course/course-update/course-update.component';
+import {CourseCreateComponent} from './course/course-create/course-create.component';
 
 
 
 let routes: Routes;
 routes = [
+  {path: 'course-create', component: CourseCreateComponent},
+  {path: 'course-update', component: CourseUpdateComponent},
+  {path: 'course/:id', component: CourseDetailComponent},
   {path: 'topic-page', component: TopicPageComponent},
   {path: 'course-list', component: CourseListComponent},
   {path: 'teacher-list', component: TeacherListComponent},
