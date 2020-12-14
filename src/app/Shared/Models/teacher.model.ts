@@ -1,7 +1,7 @@
 import {Course} from './course.model';
 
 export interface Teacher{
-  id: number;
+  id?: number;
   name: string;
   email: string;
   course: Course[];

@@ -1,7 +1,7 @@
 import {Topic} from './topic.model';
 
 export interface Course{
-  id: number;
+  id?: number;
   name: string;
   topics?: Topic[];
 }

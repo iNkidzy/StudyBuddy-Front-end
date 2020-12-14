@@ -1,50 +1,10 @@
-#carousel{
-  position: absolute;
-  top: 390px;
-  left: 0;
-  bottom: 0;
-  width: 30%;
-  opacity: .6;
-  filter: alpha(opacity=80);
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-  border-radius: 100px 40px 100px; /*TL TR BR BL*/
-  overflow: hidden;
-}
-#arrow{
-  position: absolute;
-  max-width:14%;
-  height:auto;
-  margin-left: 690px;
-  margin-bottom: 500px;
-  -webkit-transform:rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-
-#pointup{
-  position: absolute;
-  max-width: 32%;
-  height: auto;
-  margin-left: 370px;
-  margin-top: 200px;
-}
-#text-box{
-  border-style: hidden;
-  line-height: 25px;
-  font-size: 18px;
-}
 .typewriter h1 {
   text-align: center;
   align-content: center;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .10em solid grey; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 50px auto; /* Gives that scrolling effect as the typing happens */
+  margin: 40px auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation:
     typing 2s steps(40, end),
@@ -54,6 +14,7 @@
 .boxed {
   border: 1px solid green ;
   margin-top: 150px;
+
 }
 
 
@@ -68,6 +29,50 @@
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: lightgray;}
+}
+
+#carousel{
+  position: absolute;
+  top: 390px;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  opacity: .6;
+  filter: alpha(opacity=80);
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  border-radius: 100px 40px 100px 1px; /*TL TR BR BL*/
+  overflow: hidden;
+}
+#arrow{
+  position: absolute;
+  max-width:14%;
+  height:auto;
+  margin-left: 1110px;
+  margin-bottom: 500px;
+  -webkit-transform:rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+#pointup{
+  position: absolute;
+  max-width: 32%;
+  height: auto;
+  margin-left: 800px;
+  margin-top: 170px;
+}
+#text-box{
+  border-style: hidden;
+  align-content: center;
+  margin-top: 60px;
+  margin-left: 40px;
+  line-height: 25px;
+  font-size: 18px;
 }
 
 
@@ -86,8 +91,8 @@ blockquote {
   color:#fff;
   background: grey;
   opacity: 80%;
-  margin-right: 40px;
-  margin-top: 480px;
+  margin-right: 25px;
+  margin-top: 330px;
   padding: 8px 10px 6px 6px;
   border-radius: 30px 30px 40px 40px; /*TL TR BR BL*/
 
