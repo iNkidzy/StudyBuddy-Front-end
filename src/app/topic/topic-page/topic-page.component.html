@@ -9,6 +9,8 @@
     Name Of Chosen Topic for Current User
   </h3>
 
+  <button *ngIf="this.user.type.toString() === 'User'" (click)="saveTopic()">Save Topic +</button>
+
   <div id="maininfo">
   <p id="descript"> Topic description:</p>
   <div id="topicMain">
