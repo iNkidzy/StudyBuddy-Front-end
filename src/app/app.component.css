@@ -1,7 +1,6 @@
 #body{
   position: -ms-device-fixed;
-  max-width: 1920px;
-  max-height: 1230px;
+  max-width: 1080px;
   padding: 0;
 
 }

@@ -20,12 +20,13 @@ import {DashboardTeacherComponent} from './TypeUser/dashboard-teacher/dashboard-
 import {TopicCreateComponent} from './topic/topic-create/topic-create.component';
 import {TopicUpdateComponent} from './topic/topic-update/topic-update.component';
 import {TopicDetailComponent} from './topic/topic-detail/topic-detail.component';
+import {AdminGuard} from './Shared/guards/admin.guard';
 
 
 
 let routes: Routes;
 routes = [
-  {path: 'dashboard-teacher', component: DashboardTeacherComponent}, // , canActivate: [AuthGuard]
+  {path: 'dashboard-teacher', component: DashboardTeacherComponent, canActivate: [AuthGuard, AdminGuard]}, //
   {path: 'dashboard', component: DashboardComponent}, // , canActivate: [AuthGuard]
   {path: 'course-list', component: CourseListComponent}, // canActivate: [AuthGuard]
   {path: 'course-create', component: CourseCreateComponent}, // canActivate: [AuthGuard]

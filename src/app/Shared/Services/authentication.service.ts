@@ -20,7 +20,7 @@ export class AuthenticationService {
   // }
   login(username: string, password: string): Observable<boolean> {
     return this.http.post<any>(environment.apiUrl + '/token', {username, password})
-      .pipe(map(response => {
+      .pipe(map(response => { debugger;
         const token = response.token;
         // login successful if there's a jwt token in the response
         if (token) {
@@ -59,5 +59,10 @@ export class AuthenticationService {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
     // this.currentUserSubject.next(null);
+  }
+
+  isAdmin(): boolean {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser.role === 'Administrator';
   }
 }
