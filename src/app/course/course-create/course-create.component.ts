@@ -15,10 +15,16 @@ export class CourseCreateComponent implements OnInit {
   creating = false;
   errString = '';
 
+  courses: Course[];
   constructor(private courseService: CourseService) {
   }
 
   ngOnInit(): void {
+    this.courseService.getCourses()
+      .subscribe(
+        courses => {
+          this.courses = courses;
+        });
   }
 
   save = () => {
