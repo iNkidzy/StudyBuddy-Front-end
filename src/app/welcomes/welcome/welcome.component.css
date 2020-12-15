@@ -49,7 +49,7 @@
   position: fixed;
   max-width:15%;
   height: auto;
-  margin-left: 1180px;
+  margin-left: 1590px;
   margin-bottom: 400px;
   -webkit-transform:rotate(270deg);
   -moz-transform: rotate(270deg);
@@ -62,18 +62,19 @@
   position: fixed;
   max-width: 32%;
   height: auto;
-  margin-left: 850px;
-  margin-top: 300px;
+  margin-left: 1150px;
+  margin-top: 370px;
 }
 #text-box{
   border-style: hidden;
   align-content: center;
   font-family: "Apple SD Gothic Neo";color: #434343;
   margin-top: 90px;
-  margin-right: 420px;
-  margin-left: 440px;
+  padding: 20px;
+  margin-right: 600px;
+  margin-left: 610px;
   line-height: 25px;
-  font-size: 19px;
+  font-size: 23px;
 }
 
 
@@ -91,9 +92,9 @@ blockquote {
   color:#fff;
   background: grey;
   opacity: 80%;
-  margin-left: 425px;
+  margin-left: 705px;
   margin-right: 15px;
-  margin-top: 520px;
+  margin-top: 660px;
   padding: 8px 10px 6px 6px;
   border-radius: 30px 30px 40px 40px; /*TL TR BR BL*/
 
