@@ -5,7 +5,7 @@
  <meta name="HandheldFriendly" content="true">
 </head>
 
-<body class="container" id="body">
+<body class="container-fluid" id="body">
 
 
 <div id="navbar">
@@ -14,45 +14,18 @@
   <!--*ngIfUser> -->
 
 
-   <app-navbar-user></app-navbar-user>
+  <!-- <app-navbar-user></app-navbar-user>  -->
    <!--  ngIfTeacher> -->
-   <!--  <app-navbar-teacher></app-navbar-teacher> -->
+    <!-- <app-navbar-teacher></app-navbar-teacher> -->
   <!-- ngIfNone -->
-      <!--  <app-navbar-welcome></app-navbar-welcome> -->
+        <app-navbar-welcome></app-navbar-welcome>
 
   <!-- ngIfAdmin -->
-   <!--  <app-navbar-admin></app-navbar-admin> -->
+   <!-- <app-navbar-admin></app-navbar-admin>-->
 
 </div>
 
-  <!--  <div> -->
-
-
-      <!-- <app-welcome></app-welcome>  -->
-        <!-- <app-user-list></app-user-list> -->
-      <!-- <app-dashboard></app-dashboard> -->
-
-     <!--  <app-course-detail></app-course-detail> -->
-     <!-- <app-course-update></app-course-update> -->
-     <!-- <app-course-create></app-course-create> -->
-
-       <!-- <app-topic-page></app-topic-page> -->
-        <!-- <app-topic-list></app-topic-list> -->
-
-       <!-- <app-topic-page></app-topic-page> -->
-
-      <!--  <app-course-list></app-course-list> -->
-      <!-- <app-dashboard-teacher></app-dashboard-teacher> -->
-       <!-- <app-topic-page></app-topic-page> -->
-        <!-- <app-topic-list></app-topic-list> -->
-
-<!--     <app-topic-page></app-topic-page> -->
-
- <!-- <app-admin-list></app-admin-list> -->
-
- <!-- </div> -->
-
-<div class="container mt-9">
+<div class="container-fluid" style="padding:0;">
   <router-outlet></router-outlet>
 </div>
 

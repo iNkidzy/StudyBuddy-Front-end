@@ -1,5 +1,6 @@
   #loginbtn {
-   margin-left: 1025px;
+    position: -ms-device-fixed;
+   margin-left: 1100px;
 }
 
   #logobtn{

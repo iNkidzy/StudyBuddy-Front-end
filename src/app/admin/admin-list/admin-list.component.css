@@ -14,7 +14,10 @@
   position: revert;
   padding-right: 20px;
 
+}
 
+#inputSubmit{
+  margin-top:20px;
 }
 
 #input{
@@ -23,11 +26,18 @@
 }
 
 #main{
+
 height: 340px;
+
 }
 
+#readlistbox{
+  background: #212529;
+  margin-right: 1px;
+  margin-left: 1px;
+}
 #formRead{
-
+  background: #212529;
   margin-bottom: 20px;
   margin-left: 700px;
   display-inside: ruby-base-container;
@@ -42,12 +52,14 @@ height: 340px;
 
 #formDelete{
   margin-bottom: 20px;
-  margin-right:620px;
+  margin-right: 620px;
   display-inside: ruby-text-container;
 }
 
 #listadmin{
-
+  color: #d9d9d9;
+  list-style: none;
+ 
  font-size: 25px;
  --bs-font-sans-serif-font-family: "Apple SD Gothic Neo";
 
@@ -73,9 +85,9 @@ height: 340px;
 }
 
 #Headerdelete{
-  position: inherit;
+  position: -ms-device-fixed;
   padding-top: 10px;
-  padding-bottom: 260px;
+  padding-bottom: 200px;
   font-size: 30px;
   color: #d9d9d9;
   --bs-font-sans-serif-font-family: system-ui, "Apple SD Gothic Neo", bold;
@@ -97,4 +109,19 @@ height: 340px;
     margin-left: 10px;
     color: black;
   --bs-font-sans-serif-font-family: system-ui, "Apple SD Gothic Neo", bold;
+}
+
+
+
+#fixed-content {
+  top: 0;
+  bottom:0;
+  position:fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+
+
+#container{
+  background:#5ee7df;color:#b490ca;
 }
