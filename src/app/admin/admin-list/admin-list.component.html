@@ -31,12 +31,12 @@
   </div>
                            <!-- Show All Admins-->
 
-    <div class="container-md">
+    <div class="container" style="padding: 0px">
       <h3 id="hiAdmin" style="padding: 20px">Hello Admin! Here are your fellow friends: </h3>
 
-      <ul style="background: #d9d9d9; ">
+      <ul id="readlistbox">
         <ul id="listadmin">
-        <li *ngFor="let admin of Admins"><a>Username:   </a> {{admin.name}}<br><a>Email:  </a>{{admin.email}}
+        <li *ngFor="let admin of Admins"><a>Username: <br>   </a> {{admin.name}}<br><a>Email: <br> </a>{{admin.email}}
 
         </li>
         </ul>

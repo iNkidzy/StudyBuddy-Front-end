@@ -31,6 +31,11 @@ height: 340px;
 
 }
 
+#readlistbox{
+  background: #212529;
+  margin-right: 1px;
+  margin-left: 1px;
+}
 #formRead{
   background: #212529;
   margin-bottom: 20px;
@@ -52,7 +57,9 @@ height: 340px;
 }
 
 #listadmin{
-
+  color: #d9d9d9;
+  list-style: none;
+ 
  font-size: 25px;
  --bs-font-sans-serif-font-family: "Apple SD Gothic Neo";
 
