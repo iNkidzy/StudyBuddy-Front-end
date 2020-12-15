@@ -11,11 +11,18 @@ export type EditorType = 'name' | 'profile';
   styleUrls: ['./admin-list.component.css']
 })
 export class AdminListComponent implements OnInit {
-   filterForm = this.fb.group({
+   createForm = this.fb.group({
     Name: ['', Validators.required],
     Email: ['']
   });
-
+    updateForm = this.fb.group({
+        Name: ['', Validators.required],
+        Email: ['']
+    });
+    deleteForm = this.fb.group({
+        Name: ['', Validators.required],
+        Email: ['']
+    });
 
   Admins: Admin[];
   errormessage = '';
@@ -32,6 +39,15 @@ export class AdminListComponent implements OnInit {
         error => {
           this.errormessage = error.message;
         });
+    this.createForm.reset();
+    this.updateForm.reset();
+    this.deleteForm.reset(); // reset
   }
+    // tslint:disable-next-line:typedef
+    save() {
+        const admin = this.createForm.value;
+        this.adminService.create(admin);
+       //  this.createForm.reset;
+    }
 }
 
