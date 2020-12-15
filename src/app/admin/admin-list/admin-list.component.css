@@ -13,21 +13,23 @@
 #submitEdit{
   position: revert;
   padding-right: 20px;
+  margin-left: 180px;
 
 }
 
 #inputSubmit{
   margin-top:20px;
+  margin-left: 180px;
 }
 
 #input{
-  margin-right: 500px;
+  margin-right: 700px;
   margin-left: 170px;
 }
 
 #main{
 
-height: 340px;
+height: 440px;
 
 }
 
@@ -51,7 +53,7 @@ height: 340px;
 }
 
 #formDelete{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-right: 620px;
   display-inside: ruby-text-container;
 }
@@ -59,7 +61,7 @@ height: 340px;
 #listadmin{
   color: #d9d9d9;
   list-style: none;
- 
+
  font-size: 25px;
  --bs-font-sans-serif-font-family: "Apple SD Gothic Neo";
 
@@ -80,7 +82,7 @@ height: 340px;
 
 #selectDelete{
 
-  margin-left: 20px;
+  margin-left: 0px;
 
 }
 
