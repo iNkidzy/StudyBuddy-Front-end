@@ -26,7 +26,7 @@ import {AdminGuard} from './Shared/guards/admin.guard';
 
 let routes: Routes;
 routes = [
-  {path: 'dashboard-teacher', component: DashboardTeacherComponent, canActivate: [AuthGuard, AdminGuard]}, //
+  {path: 'dashboard-teacher', component: DashboardTeacherComponent}, // canActivate: [AuthGuard, AdminGuard]
   {path: 'dashboard', component: DashboardComponent}, // , canActivate: [AuthGuard]
   {path: 'course-list', component: CourseListComponent}, // canActivate: [AuthGuard]
   {path: 'course-create', component: CourseCreateComponent}, // canActivate: [AuthGuard]
