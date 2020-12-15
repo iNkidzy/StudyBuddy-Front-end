@@ -1,12 +1,12 @@
 #body{
-  position: fixed;
+  position: -ms-device-fixed;
   max-width: 1920px;
-  max-height: 1080px;
-  padding: 0px;
+  max-height: 1230px;
+  padding: 0;
 
 }
 #html {
-  position:fixed;
+  position: -ms-device-fixed;
   top:0;
   bottom:0;
   left:0;
@@ -14,9 +14,10 @@
 }
 
 #body{
-  position:fixed;
+  position: -ms-device-fixed;
   top:0;
   bottom:0;
   left:0;
   right:0;
 }
+

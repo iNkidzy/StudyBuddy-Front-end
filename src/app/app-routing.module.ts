@@ -17,27 +17,33 @@ import {AuthGuard} from './Shared/guards/auth.guard';
 import {CommonModule} from '@angular/common';
 import {DashboardComponent} from './Shared/dashboard/dashboard.component';
 import {DashboardTeacherComponent} from './TypeUser/dashboard-teacher/dashboard-teacher.component';
+import {TopicCreateComponent} from './topic/topic-create/topic-create.component';
+import {TopicUpdateComponent} from './topic/topic-update/topic-update.component';
+import {TopicDetailComponent} from './topic/topic-detail/topic-detail.component';
 
 
 
 let routes: Routes;
 routes = [
-  {path: 'dashboard-teacher', component: DashboardTeacherComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'course-create', component: CourseCreateComponent},
-  {path: 'course-update', component: CourseUpdateComponent},
-  {path: 'course/:id', component: CourseDetailComponent},
-  {path: 'topic-page', component: TopicPageComponent},
-  {path: 'course-list', component: CourseListComponent},
-  {path: 'teacher-list', component: TeacherListComponent},
-  {path: 'topic-list', component: TopicListComponent},
-  {path: 'user', component: UserListComponent},
-  {path: 'admin', component: AdminListComponent},
+  {path: 'dashboard-teacher', component: DashboardTeacherComponent}, // , canActivate: [AuthGuard]
+  {path: 'dashboard', component: DashboardComponent}, // , canActivate: [AuthGuard]
+  {path: 'course-list', component: CourseListComponent}, // canActivate: [AuthGuard]
+  {path: 'course-create', component: CourseCreateComponent}, // canActivate: [AuthGuard]
+  {path: 'course-update', component: CourseUpdateComponent}, // canActivate: [AuthGuard]
+  {path: 'course/:id', component: CourseDetailComponent}, // canActivate: [AuthGuard]
+  {path: 'topic-page', component: TopicPageComponent}, // canActivate: [AuthGuard]
+  {path: 'topic-detail', component: TopicDetailComponent}, // canActivate: [AuthGuard]
+  {path: 'topic-update', component: TopicUpdateComponent}, // canActivate: [AuthGuard]
+  {path: 'topic-create', component: TopicCreateComponent}, // canActivate: [AuthGuard]
+  {path: 'topic-list', component: TopicListComponent},   // canActivate: [AuthGuard]
+  {path: 'teacher-list', component: TeacherListComponent}, // delete ?
+  {path: 'user', component: UserListComponent},  // delete ?
+  {path: 'admin', component: AdminListComponent}, // canActivate: [AuthGuard]
   {path: 'welcome', component: WelcomeComponent},
   {path: 'login', component: LoginComponent },
-  {path: '', component: WelcomeComponent, canActivate: [AuthGuard]},
+  {path: '', component: WelcomeComponent},
 // otherwise redirect to welcome
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: 'welcome' }
 ];
 
 @NgModule({
