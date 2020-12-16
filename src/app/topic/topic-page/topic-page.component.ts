@@ -8,6 +8,7 @@ import {User} from '../../Shared/Models/user.model';
 import {UserService} from '../../Shared/Services/user.service';
 import {Observable} from 'rxjs';
 import {TopicComment} from '../../Shared/Models/topic-comment.model';
+import {Usertype} from '../../Shared/Models/usertype.model';
 
 
 @Component({
@@ -29,11 +30,12 @@ export class TopicPageComponent implements OnInit {
               private commentService: CommentService,
               private userService: UserService) { }
   ngOnInit(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.userService.findById(currentUser.id)
       .subscribe(user => {this.user = user;
        });
-    this.topicService.findById(1)
+    this.topicService.findById(id)
      .subscribe(topic => {this.topic = topic;
      });
   }
@@ -47,7 +49,6 @@ export class TopicPageComponent implements OnInit {
     };
     this.commentService.create(comment)
       .subscribe();
-    debugger;
     this.topic.comments.push(comment);
     this.topicService.update(this.topic.id, this.topic);
     this.commentForm.reset();

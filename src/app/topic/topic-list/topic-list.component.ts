@@ -15,7 +15,8 @@ export class TopicListComponent implements OnInit {
   constructor(private route: ActivatedRoute, private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.courseService.findById(1).subscribe(course => {this.course = course;
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.courseService.findById(id).subscribe(course => {this.course = course;
     });
   }
 }
