@@ -47,7 +47,7 @@
                                    <!-- Admin Create -->
 <div class="container-lg" style="background: #212529;" >
 
-  <form class="row gx-3 gy-2 align-items-center" id = "formRead" action="#">
+  <form class="row gx-3 gy-2 align-items-center" id = "formRead" action="#" (ngSubmit)="save()"> <!-- ngSave creates new admin rn -->
     <div class="form-group" style="background:#212529">
       <legend aria-describedby="emailHelp">
         <small id="Header2" class="form-text">Hey! Did you know that you can create a new profile here:</small>
@@ -58,7 +58,7 @@
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon2">@</span>
-        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+        <input  type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
       </div>
 
       <select class="form-select" id="selectType" aria-label="Default select example">
@@ -69,16 +69,16 @@
       </select>
 
       <div  style="margin-left: 330px">
-      <input class="btn btn-outline-info" id="inputSubmit" type="submit" value="Create">
+      <input class="btn btn-outline-info" id="inputSubmit" type="submit" value="Create"> // save button
       </div>
                                     <!-- json data validation -->
       <p style="color: #d9d9d9" >
-        Form Value: {{ filterForm.value | json }}
+        Form Value: {{ createForm.value | json }}
       </p>
 
 
       <p style="color: #d9d9d9">
-        Form Status: {{ filterForm.status }}
+        Form Status: {{ createForm.status }}
       </p>
 
     </div>
@@ -117,12 +117,12 @@
           </div>
           <!-- json data validation -->
           <p style="color: #d9d9d9" >
-            Form Value: {{ filterForm.value | json }}
+            Form Value: {{ updateForm.value | json }}
           </p>
 
 
           <p style="color: #d9d9d9">
-            Form Status: {{ filterForm.status }}
+            Form Status: {{ updateForm.status }}
           </p>
 
         </div>
@@ -153,12 +153,12 @@
 
           <!-- json data validation -->
           <p style="color: #d9d9d9;padding:10px;" >
-            Form Value: {{ filterForm.value | json }}
+            Form Value: {{ deleteForm.value | json }}
           </p>
 
 
           <p style="color: #d9d9d9;">
-            Form Status: {{ filterForm.status }}
+            Form Status: {{ deleteForm.status }}
           </p>
 
         </div>

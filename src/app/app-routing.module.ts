@@ -35,7 +35,7 @@ routes = [
   {path: 'course/:id', component: CourseDetailComponent}, // canActivate: [AuthGuard]
   {path: 'topic-page', component: TopicPageComponent}, // canActivate: [AuthGuard]
   {path: 'topic-detail', component: TopicDetailComponent}, // canActivate: [AuthGuard]
-  {path: 'topic-update', component: TopicUpdateComponent}, // canActivate: [AuthGuard]
+  {path: 'topic-update/:id', component: TopicUpdateComponent}, // canActivate: [AuthGuard]
   {path: 'topic-create', component: TopicCreateComponent}, // canActivate: [AuthGuard]
   {path: 'topic-list', component: TopicListComponent},   // canActivate: [AuthGuard]
   {path: 'teacher-list', component: TeacherListComponent}, // delete ?
