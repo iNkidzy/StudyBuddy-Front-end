@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Course} from '../../Shared/Models/course.model';
 import {CourseService} from '../../Shared/Services/course.service';
 import {map, catchError} from 'rxjs/operators';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-course-create',
@@ -15,12 +16,19 @@ export class CourseCreateComponent implements OnInit {
   creating = false;
   errString = '';
 
-  courses: Course[];
-  constructor(private courseService: CourseService) {
+  courses: Course;
+  constructor(private courseService: CourseService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.courseService.getCourses()
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.courseService.findById(id)
+      .subscribe(courselst => {
+        this.courses = courselst;
+      });
+  }
+  }
+   /* this.courseService.getCourses()
       .subscribe(
         courses => {
           this.courses = courses;
@@ -49,5 +57,5 @@ export class CourseCreateComponent implements OnInit {
         this.errString = '';
       });
 
-  }
-}
+  } */
+
