@@ -27,7 +27,10 @@ import {TeacherGuard} from './Shared/guards/teacher.guard';
 
 let routes: Routes;
 routes = [
+
+ 
   {path: 'dashboard-teacher', component: DashboardTeacherComponent, canActivate: [AuthGuard, TeacherGuard]}, //
+
   {path: 'dashboard', component: DashboardComponent}, // , canActivate: [AuthGuard]
   {path: 'course-list', component: CourseListComponent}, // canActivate: [AuthGuard]
   {path: 'course-create', component: CourseCreateComponent}, // canActivate: [AuthGuard]

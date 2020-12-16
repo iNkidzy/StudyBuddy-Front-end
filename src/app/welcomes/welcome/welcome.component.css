@@ -40,7 +40,7 @@
   bottom: 0;
   width: 30%;
   opacity: .6;
-  filter: alpha(opacity=80);
+  filter: alpha(opacity=85);
   font-size: 20px;
   color: #fff;
   text-align: center;
@@ -65,12 +65,13 @@
   max-width: 32%;
   height: auto;
   margin-left: 65%;
-  margin-top: 12%;
+  margin-top: 15%;
 }
 #text-box{
   border-style: hidden;
   align-content: center;
-  font-family: "Apple SD Gothic Neo";color: #434343;
+  font-family: "Calibri Light";
+  color: #434343;
   margin-top: -1%;
   padding: 20px;
   margin-right: 30%;
@@ -96,7 +97,7 @@ blockquote {
   opacity: 80%;
   margin-left: 45%;
   margin-right: 4%;
-  margin-top: 30%;
+  margin-top: 29%;
 
   border-radius: 30px 30px 40px 40px; /*TL TR BR BL*/
 

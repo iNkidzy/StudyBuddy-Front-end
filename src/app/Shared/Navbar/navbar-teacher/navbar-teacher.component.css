@@ -1,9 +1,10 @@
 #navbarDarkDropdownMenuLink{
   position: fixed;
-  margin-left: 970px;
+  margin-left: 70%;
 }
 
 #box{
+  position: fixed;
   padding-right: 3px;
   padding-top: 10px;
   padding-bottom: 20px;

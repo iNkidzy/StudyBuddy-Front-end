@@ -36,17 +36,16 @@
   position: absolute;
   max-width: 14%;
   height: auto;
-  margin-left: 1030px;
-  margin-top: 30px;
+  margin-left: 83%;
+  margin-top: 2%;
   border-radius: 100px 100px 100px 100px; /*TL TR BR BL*/
 }
 
 #usernameT{
   text-align: center;
   position: absolute;
-  margin-left: 1030px;
-  margin-right: 70px;
-  margin-top: 250px;
+  margin-left: 83%;
+  margin-top: 20%;
   pointer-events: none;
   border-radius: 50px 50px 50px 50px;
   border-style: double;
@@ -57,9 +56,8 @@
 #emailT{
   text-align: center;
   position: absolute;
-  margin-left: 1030px;
-  margin-right: 80px;
-  margin-top: 270px;
+  margin-left: 83%;
+  margin-top: 22%;
   pointer-events: none;
   border-radius: 50px 50px 50px 50px;
   border-style: double;
@@ -95,13 +93,13 @@
 #btncoursesAll{
   height: 60px;
   width: 150px;
-  margin-left: 1050px;
-  margin-top: 300px;
+  margin-left: 85%;
+  margin-top: 24%;
 
 }
 #btnComment{
-  margin-left: 1035px;
-  margin-top: 20px;
+  margin-left: 84%;
+  margin-top: 2%;
 
 }
 
@@ -120,17 +118,10 @@
 #mycourse{
   border-radius: 50px 50px 50px 50px;
   align-content: center;
-  margin-left: 480px;
+  margin-left: 37%;
   margin-top: -350px;
   max-width: 80%;
-  height: auto
-
+  height: auto;
 
 }
-#coursename{
-  margin-left: 480px;
-  margin-top: -340px;
-  background-color: whitesmoke;
-}
-
 
