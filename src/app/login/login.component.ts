@@ -4,7 +4,10 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from '../Shared/Services/authentication.service';
 import {User} from '../Shared/Models/user.model';
 import {UserService} from '../Shared/Services/user.service';
+
 import {Usertype} from '../Shared/Models/usertype.model';
+
+
 
 @Component({
   selector: 'app-login',
@@ -16,10 +19,15 @@ export class LoginComponent implements OnInit {
   submitted = false;
   loading = false;
   errormessage = '';
+  user: User;
   constructor(private formBuilder: FormBuilder,
               private router: Router,
+
               private authenticationService: AuthenticationService,
               private userService: UserService) { }
+
+              private authenticationService: AuthenticationService, userService: UserService) { }
+
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -48,7 +56,12 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
         success => {
+
           this.navigate();
+
+          this.router.navigate(['/admin']);
+          // somehow navigate to another page for admin AND .... Do if statements with routes
+
         },
         error => {
           this.errormessage = error.message;

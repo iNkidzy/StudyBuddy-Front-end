@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NavbarWelcomeComponent } from './welcomes/shared/navbar-welcome/navbar-welcome.component';
+import { NavbarWelcomeComponent } from './Shared/Navbar/navbar-welcome/navbar-welcome.component';
 import { NavbarUserComponent } from './Shared/Navbar/navbar-user/navbar-user.component';
 import { NavbarTeacherComponent } from './Shared/Navbar/navbar-teacher/navbar-teacher.component';
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
@@ -15,7 +15,7 @@ import { TeacherListComponent } from './TypeUser/teacher/teacher-list/teacher-li
 import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { UserListComponent } from './TypeUser/user/user-list/user-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
-import {NavbarAdminComponent} from './admin/shared/navbar-admin/navbar-admin.component';
+import {NavbarAdminComponent} from './Shared/Navbar/navbar-admin/navbar-admin.component';
 
 import { DashboardComponent } from './Shared/dashboard/dashboard.component';
 
@@ -32,6 +32,7 @@ import { DashboardTeacherComponent } from './TypeUser/dashboard-teacher/dashboar
 import {AuthenticationService} from './Shared/Services/authentication.service';
 import {AdminService} from './admin/shared/admin.service';
 import {AuthGuard} from './Shared/guards/auth.guard';
+import { NavbarComponent } from './Shared/Navbar/navbar/navbar.component';
 
 
 
@@ -59,7 +60,9 @@ import {AuthGuard} from './Shared/guards/auth.guard';
     TopicDetailComponent,
     TopicCreateComponent,
 
-    DashboardTeacherComponent
+    DashboardTeacherComponent,
+
+    NavbarComponent
 
   ],
   imports: [

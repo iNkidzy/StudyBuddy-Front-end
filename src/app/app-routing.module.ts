@@ -29,6 +29,8 @@ let routes: Routes;
 routes = [
 
 
+
+
   {path: 'dashboard-teacher', component: DashboardTeacherComponent, canActivate: [AuthGuard, TeacherGuard]}, //
 
   {path: 'dashboard', component: DashboardComponent}, // , canActivate: [AuthGuard]
@@ -48,7 +50,7 @@ routes = [
   {path: 'login', component: LoginComponent },
   {path: '', component: WelcomeComponent},
 // otherwise redirect to welcome
-  { path: '**', redirectTo: 'welcome' }
+  { path: '**', redirectTo: 'admin' }
 ];
 
 @NgModule({
