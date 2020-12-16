@@ -5,6 +5,8 @@ import {TopicService} from '../../Shared/Services/topic.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CommentService} from '../../Shared/Services/comment.service';
 import {User} from '../../Shared/Models/user.model';
+import {UserService} from '../../Shared/Services/user.service';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -23,8 +25,11 @@ export class TopicPageComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private topicService: TopicService,
-              private commentService: CommentService) { }
+              private commentService: CommentService,
+              private userService: UserService) { }
   ngOnInit(): void {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.user = this.userService.findByIdButBetter(currentUser.id);
     this.topicService.findById(1)
      .subscribe(topic => {this.topic = topic;
      });
@@ -39,5 +44,10 @@ export class TopicPageComponent implements OnInit {
     this.commentService.create(comment)
       .subscribe();
     this.commentForm.reset();
+  }
+  saveTopic(): void {
+  this.user.topics.push(this.topic);
+  this.userService.update(this.user.id, this.user)
+    .subscribe();
   }
 }

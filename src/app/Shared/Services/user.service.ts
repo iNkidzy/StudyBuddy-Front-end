@@ -38,9 +38,17 @@ export class UserService {
     return this.http.get<User>('https://localhost:44301/api/user/' + id); // (`/users/${id}`)
   }
 
+  findByIdButBetter(id: number): any {
+    return this.http.get<User>('https://localhost:44301/api/user/' + id); // (`/users/${id}`)
+  }
+
   // Delete by ID
   delete(id: number): Observable<User> {
     return this.http.delete<User>('https://localhost:44301/api/user/' + id);
+  }
+
+  update(id: number, user: User): Observable<User>{
+    return this.http.put<User>('https://localhost:44301/api/user/' + id, user);
   }
 
   // Add Edit Users Here:
