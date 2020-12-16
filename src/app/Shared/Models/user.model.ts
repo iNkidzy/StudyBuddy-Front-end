@@ -4,7 +4,7 @@ import {Topic} from './topic.model';
 
 export interface User{
   id?: number;
-  type: Usertype;
+  userType: Usertype;
   name: string;
   email: string;
   username: string;

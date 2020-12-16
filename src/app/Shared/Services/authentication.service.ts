@@ -16,7 +16,7 @@ export class AuthenticationService {
       .pipe(map(response => {
         const token = response.token;
         const id = response.id;
-        const userType = response.userType;
+        const userType = response.role;
         if (token) {
           localStorage.setItem('currentUser', JSON.stringify({id, username, userType, token})); // somewhere here
           return response;
@@ -50,14 +50,14 @@ export class AuthenticationService {
 
   isAdmin(): boolean {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser.role === 'Administrator';
+    return currentUser.userType === 'Admin';
   }
   isTeacher(): boolean{
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser.role === 'Teacher';
+    return currentUser.userType === 'Teacher';
   }
   isUser(): boolean{
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser.role === 'User';
+    return currentUser.userType === 'User';
   }
 }
