@@ -57,14 +57,15 @@ export class LoginComponent implements OnInit {
   }
   navigate(): void{
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser.userType === 'user'){
-      this.router.navigate([('/dashboard')]);
+    debugger;
+    if (currentUser.userType === 'User'){
+      this.router.navigate(['/dashboard']);
     }
-    if (currentUser.userType === 'admin'){
-      this.router.navigate([('/admin')]);
+    if (currentUser.userType === 'Admin'){
+      this.router.navigate(['/admin']);
     }
-    if (currentUser.userType === 'teacher'){
-      this.router.navigate([('/dashboard-teacher')]);
+    if (currentUser.userType === 'Teacher'){
+      this.router.navigate(['/dashboard-teacher']);
     }
 
   }

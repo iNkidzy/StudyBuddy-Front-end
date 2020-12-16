@@ -13,6 +13,7 @@ export class DashboardTeacherComponent implements OnInit {
   email: string;
   comment$: Observable<Comment[]>;
   id: 1;
+
   constructor(private route: ActivatedRoute, private commentService: CommentService) { }
 
   ngOnInit(): void {
