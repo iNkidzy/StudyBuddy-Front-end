@@ -15,8 +15,10 @@ export class AuthenticationService {
     return this.http.post<any>(environment.apiUrl + 'token', {username, password})
       .pipe(map(response => {
         const token = response.token;
+        const id = response.id;
+        const userType = response.userType;
         if (token) {
-          localStorage.setItem('currentUser', JSON.stringify({username, token})); // somewhere here
+          localStorage.setItem('currentUser', JSON.stringify({id, username, userType, token})); // somewhere here
           return response;
         } else {
           return false;

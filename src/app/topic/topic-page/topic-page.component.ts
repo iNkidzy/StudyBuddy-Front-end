@@ -29,7 +29,9 @@ export class TopicPageComponent implements OnInit {
               private userService: UserService) { }
   ngOnInit(): void {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.user = this.userService.findByIdButBetter(currentUser.id);
+    this.userService.findById(currentUser.id)
+      .subscribe(user => {this.user = user;
+       });
     this.topicService.findById(1)
      .subscribe(topic => {this.topic = topic;
      });
@@ -44,10 +46,20 @@ export class TopicPageComponent implements OnInit {
     this.commentService.create(comment)
       .subscribe();
     this.commentForm.reset();
+    this.refresh();
   }
   saveTopic(): void {
-  this.user.topics.push(this.topic);
-  this.userService.update(this.user.id, this.user)
+    if (this.user.topics == null){
+      const topics: Topic[] = [];
+      topics.push(this.topic);
+      this.user.topics = topics; }
+    else {
+      this.user.topics.push(this.topic);
+    }
+    this.userService.update(this.user.id, this.user)
     .subscribe();
+  }
+  refresh(): void{
+    window.location.reload();
   }
 }
