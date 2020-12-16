@@ -46,7 +46,7 @@ routes = [
   {path: 'login', component: LoginComponent },
   {path: '', component: WelcomeComponent},
 // otherwise redirect to welcome
-  { path: '**', redirectTo: 'welcome' }
+  { path: '**', redirectTo: 'admin' }
 ];
 
 @NgModule({
