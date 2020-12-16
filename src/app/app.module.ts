@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NavbarWelcomeComponent } from './welcomes/shared/navbar-welcome/navbar-welcome.component';
+import { NavbarWelcomeComponent } from './Shared/Navbar/navbar-welcome/navbar-welcome.component';
 import { NavbarUserComponent } from './Shared/Navbar/navbar-user/navbar-user.component';
 import { NavbarTeacherComponent } from './Shared/Navbar/navbar-teacher/navbar-teacher.component';
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
