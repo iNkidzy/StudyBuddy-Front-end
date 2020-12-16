@@ -46,6 +46,9 @@ export class TopicService {
     return this.http.delete<Topic>('https://localhost:44301/api/topic/' + id);
   }
 
+  update(id: number, topic: Topic): Observable<Topic>{
+    return this.http.put<Topic>('https://localhost:44301/api/topic/' + id, topic);
+  }
 
   // Add Edit Topic Here:
   // Update by ID

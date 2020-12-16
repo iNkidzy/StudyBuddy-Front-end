@@ -21,8 +21,8 @@ export class CommentService {
 
 // Create
 
-  create(comment: { topic: Topic; mainBody: any; datePosted: Date; user: User }): Observable<Comment> {
-    return this.http.post<Comment>('https://localhost:44301/api/comment', comment);
+  create(comment: TopicComment): Observable<TopicComment> {
+    return this.http.post<TopicComment>('https://localhost:44301/api/comment/', comment);
   }
 
   // GetAllAdmins
