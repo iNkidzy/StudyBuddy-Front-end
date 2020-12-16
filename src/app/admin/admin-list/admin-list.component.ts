@@ -39,9 +39,9 @@ export class AdminListComponent implements OnInit {
         error => {
           this.errormessage = error.message;
         });
-    this.createForm.reset();
-    this.updateForm.reset();
-    this.deleteForm.reset(); // reset
+   // this.createForm.reset();
+   // this.updateForm.reset();
+   // this.deleteForm.reset(); // reset
   }
     // tslint:disable-next-line:typedef
     save() {

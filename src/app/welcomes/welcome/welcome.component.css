@@ -121,3 +121,11 @@ blockquote:after {
 }
 
 
+#loginbtn {
+  position: -ms-device-fixed;
+  margin-left: 1880%;
+}
+
+#logobtn{
+  margin-left: 20px;
+}
