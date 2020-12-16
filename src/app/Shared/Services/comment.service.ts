@@ -22,12 +22,12 @@ export class CommentService {
 // Create
 
   create(comment: { topic: Topic; mainBody: any; datePosted: Date; user: User }): Observable<Comment> {
-    return this.http.post<Comment>('https://localhost:51961/api/comment', comment);
+    return this.http.post<Comment>('https://localhost:44301/api/comment', comment);
   }
 
   // GetAllAdmins
   getComments(): Observable<Comment[]> {
-    return this.http.get<Comment[]>('https://localhost:51961/api/comment'); // check
+    return this.http.get<Comment[]>('https://localhost:44301/api/comment'); // check
 
     // add authorization header with jwt token
     //  httpOptions.headers =
@@ -38,12 +38,12 @@ export class CommentService {
 
   // GetCats byID
   findById(id: number): Observable<TopicComment> {
-    return this.http.get<TopicComment>('https://localhost:51961/api/comment/' + id);
+    return this.http.get<TopicComment>('https://localhost:44301/api/comment/' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<TopicComment> {
-    return this.http.delete<TopicComment>('https://localhost:51961/api/comment/' + id);
+    return this.http.delete<TopicComment>('https://localhost:44301/api/comment/' + id);
   }
 
   // Add Edit Comment Here:
