@@ -22,13 +22,13 @@ export class TopicService {
 
 // Create
   create(topic: Topic): Observable<Topic> {
-    return this.http.post<Topic>('https://localhost:51961/api/topic', topic);
+    return this.http.post<Topic>('https://localhost:44301/api/topic', topic);
   }
 
 
   // GetAllAdmins
   getTopics(): Observable<Topic[]> {
-    return this.http.get<Topic[]>('https://localhost:51961/api/topic'); // check
+    return this.http.get<Topic[]>('https://localhost:44301/api/topic'); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -38,13 +38,14 @@ export class TopicService {
 
   // GetCats byID
   findById(id: number): Observable<Topic> {
-    return this.http.get<Topic>('https://localhost:51961/api/topic/' + id);
+    return this.http.get<Topic>('https://localhost:44301/api/topic/' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<Topic> {
-    return this.http.delete<Topic>('https://localhost:51961/api/topic/' + id);
+    return this.http.delete<Topic>('https://localhost:44301/api/topic/' + id);
   }
+
 
   // Add Edit Topic Here:
   // Update by ID

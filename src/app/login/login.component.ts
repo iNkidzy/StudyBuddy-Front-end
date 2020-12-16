@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
         success => {
-          this.router.navigate(['/']);  // somehow navigate to another page for admin
+          this.router.navigate(['/']);  // somehow navigate to another page for admin AND .... Do if statements with routes
         },
         error => {
           this.errormessage = error.message;
