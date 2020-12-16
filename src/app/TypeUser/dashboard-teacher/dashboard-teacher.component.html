@@ -35,10 +35,12 @@
   -webkit-text-fill-color: transparent;
   border-color: grey;
   border-style: dashed" target="_blank" >Comments for you</a></div>
-            <div class="card" id="mycourse" style="width: 18rem;">
-            <img src="../../../assets/img/process.jpg" class="card-img-top" routerLink="/topic-page" alt="mycourse">
+
+    <div class="card" id="mycourse" style="width: 18rem;">
+            <img src="../../../assets/img/process.jpg" class="card-img-top" routerLink="/topic-list/{{course.id}}" alt="mycourse">
             <div class="card-body">
               <p class="card-text" style="font-family: 'Calibri Light'; font-size: 25px; text-align: center; ">{{course.name}}</p>
+              <a routerLinkActive="active" routerLink="/topic-list/{{course.id}}" class="btn btn-primary" id="routeButt">Go to Course</a>
             </div>
           </div>
             </div>

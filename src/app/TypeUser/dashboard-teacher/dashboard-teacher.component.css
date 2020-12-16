@@ -122,6 +122,13 @@
   margin-top: -350px;
   max-width: 80%;
   height: auto;
-
+  text-align: center;
 }
 
+
+#routeButt {
+  margin:0 auto;
+  display:block;
+  background: #b490ca;
+  border-color: cornflowerblue;
+}
