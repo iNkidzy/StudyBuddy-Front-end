@@ -7,6 +7,7 @@ import {CommentService} from '../../Shared/Services/comment.service';
 import {User} from '../../Shared/Models/user.model';
 import {UserService} from '../../Shared/Services/user.service';
 import {Observable} from 'rxjs';
+import {TopicComment} from '../../Shared/Models/topic-comment.model';
 
 
 @Component({
@@ -37,16 +38,19 @@ export class TopicPageComponent implements OnInit {
      });
   }
   saveComment(): void {
-    const comment = {
+    const date = new Date();
+    const comment: TopicComment = {
       mainBody: this.commentForm.value,
       topic: this.topic,
       user: this.user,
-      datePosted: new Date((new Date()).getTime())
+      datePosted: new Date(date.getFullYear(), date.getMonth(), date.getDate())
     };
     this.commentService.create(comment)
       .subscribe();
+    debugger;
+    this.topic.comments.push(comment);
+    this.topicService.update(this.topic.id, this.topic);
     this.commentForm.reset();
-    this.refresh();
   }
   saveTopic(): void {
     if (this.user.topics == null){
