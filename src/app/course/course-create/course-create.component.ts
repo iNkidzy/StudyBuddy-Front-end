@@ -26,7 +26,6 @@ export class CourseCreateComponent implements OnInit {
           this.courses = courses;
         });
   }
-
   save = () => {
     this.creating = true;
     const idValue = this.id.value;
