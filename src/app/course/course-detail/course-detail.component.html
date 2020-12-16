@@ -1,5 +1,5 @@
 
-
+<!--
 <div class="container-fluid" id="body">
 
 <h1 style="margin-left: 450px; padding:20px;">Delete a Course: </h1>
@@ -22,10 +22,19 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
+<h1>Course Detail!</h1>
 
+<div *ngIf="courses">
+  <!--<h2> {{courses.id}}</h2>
+    <h3>{{courses.name}}</h3>
+    <h4>{{courses.lastname}}</h4> -->
 
+</div>
+<div *ngIf="!courses">
+<h2>Course not found!</h2>
+</div>
 
 
 

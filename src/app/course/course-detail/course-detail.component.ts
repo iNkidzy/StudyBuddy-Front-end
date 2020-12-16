@@ -22,6 +22,7 @@ export class CourseDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
     this.courseService.getCourses()
       .subscribe(
         courses => {

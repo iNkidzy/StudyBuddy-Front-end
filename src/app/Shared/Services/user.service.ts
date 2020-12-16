@@ -20,12 +20,12 @@ export class UserService {
 
 // Create
   create(user: User): Observable<User> {
-    return this.http.post<User>('https://localhost:51961/api/user', user);
+    return this.http.post<User>('https://localhost:44301/api/user', user);
   }
 
   // GetAllAdmins
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('https://localhost:51961/api/user'); // ('/users') // check
+    return this.http.get<User[]>('https://localhost:44301/api/user'); // ('/users') // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -35,12 +35,20 @@ export class UserService {
 
   // GetCats byID
   findById(id: number): Observable<User> {
-    return this.http.get<User>('https://localhost:51961/api/user/' + id); // (`/users/${id}`)
+    return this.http.get<User>('https://localhost:44301/api/user/' + id); // (`/users/${id}`)
+  }
+
+  findByIdButBetter(id: number): any {
+    return this.http.get<User>('https://localhost:44301/api/user/' + id); // (`/users/${id}`)
   }
 
   // Delete by ID
   delete(id: number): Observable<User> {
-    return this.http.delete<User>('https://localhost:51961/api/user/' + id);
+    return this.http.delete<User>('https://localhost:44301/api/user/' + id);
+  }
+
+  update(id: number, user: User): Observable<User>{
+    return this.http.put<User>('https://localhost:44301/api/user/' + id, user);
   }
 
   // Add Edit Users Here:

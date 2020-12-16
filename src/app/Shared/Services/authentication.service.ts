@@ -8,30 +8,19 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'})
 
 export class AuthenticationService {
-  // private currentUserSubject: BehaviorSubject<User>;
-  // public currentUser: Observable<User>;
   constructor(private http: HttpClient) {
-    // this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-    // this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  // public get currentUserValue(): User {
-  // return this.currentUserSubject.value;
-  // }
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(environment.apiUrl + '/token', {username, password})
-      .pipe(map(response => { debugger;
+    return this.http.post<any>(environment.apiUrl + 'token', {username, password})
+      .pipe(map(response => {
         const token = response.token;
-        // login successful if there's a jwt token in the response
+        const id = response.id;
+        const userType = response.userType;
         if (token) {
-          // store username and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify({username, token}));
-          // this is from tutorial (user)
-          // this.currentUserSubject.next(response);
-          // return true to indicate successful login
-          return response; // true;
+          localStorage.setItem('currentUser', JSON.stringify({id, username, userType, token})); // somewhere here
+          return response;
         } else {
-          // return false to indicate failed login
           return false;
         }
       }));
@@ -56,13 +45,19 @@ export class AuthenticationService {
   }
 
   logout(): void {
-    // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
-    // this.currentUserSubject.next(null);
   }
 
   isAdmin(): boolean {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     return currentUser.role === 'Administrator';
+  }
+  isTeacher(): boolean{
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser.role === 'Teacher';
+  }
+  isUser(): boolean{
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser.role === 'User';
   }
 }
