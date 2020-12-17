@@ -20,9 +20,9 @@
   <label>
     Type:
     <select id="type" formControlName="type" placeholder="Select Type">
-      <options *ngFor="let t of types" [value]="t.id">
-        {{t.name}}
-      </options>
+      <option *ngFor="let k of typeKeys" [value]="k">
+        {{types[k]}}
+      </option>
     </select>
   </label>
   <button type="submit">Save Changes</button>
