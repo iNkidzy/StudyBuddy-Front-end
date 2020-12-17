@@ -22,12 +22,12 @@ export class CommentService {
 // Create
 
   create(comment: TopicComment): Observable<TopicComment> {
-    return this.http.post<TopicComment>('https://localhost:44301/api/comment/', comment);
+    return this.http.post<TopicComment>('https://studybuddy-exam.azurewebsites.net/api/comment/', comment);
   }
 
   // GetAllAdmins
   getComments(): Observable<Comment[]> {
-    return this.http.get<Comment[]>('https://localhost:44301/api/comment'); // check
+    return this.http.get<Comment[]>('https://studybuddy-exam.azurewebsites.net/api/comment'); // check
 
     // add authorization header with jwt token
     //  httpOptions.headers =
@@ -38,12 +38,12 @@ export class CommentService {
 
   // GetCats byID
   findById(id: number): Observable<TopicComment> {
-    return this.http.get<TopicComment>('https://localhost:44301/api/comment/' + id);
+    return this.http.get<TopicComment>('https://studybuddy-exam.azurewebsites.net/api/comment/' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<TopicComment> {
-    return this.http.delete<TopicComment>('https://localhost:44301/api/comment/' + id);
+    return this.http.delete<TopicComment>('https://studybuddy-exam.azurewebsites.net/api/comment/' + id);
   }
 
   // Add Edit Comment Here:
