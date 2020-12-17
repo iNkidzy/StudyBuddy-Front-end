@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Admin} from '../shared/admin.model';
 import {AdminService} from '../shared/admin.service';
+import {UserService} from '../../Shared/Services/user.service';
+import {TopicService} from '../../Shared/Services/topic.service';
+import {CourseService} from '../../Shared/Services/course.service';
+import {User} from '../../Shared/Models/user.model';
+import {Topic} from '../../Shared/Models/topic.model';
+import {Course} from '../../Shared/Models/course.model';
 
 export type EditorType = 'name' | 'profile';
 
@@ -11,43 +17,45 @@ export type EditorType = 'name' | 'profile';
   styleUrls: ['./admin-list.component.css']
 })
 export class AdminListComponent implements OnInit {
-   createForm = this.fb.group({
-    Name: ['', Validators.required],
-    Email: ['']
-  });
-    updateForm = this.fb.group({
-        Name: ['', Validators.required],
-        Email: ['']
-    });
-    deleteForm = this.fb.group({
-        Name: ['', Validators.required],
-        Email: ['']
-    });
 
-  Admins: Admin[];
-  errormessage = '';
-
-  constructor(private fb: FormBuilder, private adminService: AdminService) {
+  users: User[];
+  topics: Topic[];
+  courses: Course[];
+  constructor(private fb: FormBuilder, private userService: UserService,
+              private topicService: TopicService, private courseService: CourseService) {
   }
 
   ngOnInit(): void {
-    this.adminService.getAdmins()
-      .subscribe(
-        admins => {
-          this.Admins = admins;
-        },
-        error => {
-          this.errormessage = error.message;
-        });
-   // this.createForm.reset();
-   // this.updateForm.reset();
-   // this.deleteForm.reset(); // reset
-  }
-    // tslint:disable-next-line:typedef
-    save() {
-        const admin = this.createForm.value;
-        this.adminService.create(admin);
-       //  this.createForm.reset;
+    this.userService.getUsers()
+      .subscribe(users => {this.users = users;
+      });
+    this.topicService.getTopics()
+      .subscribe(topics => {this.topics = topics;
+      });
+    this.courseService.getCourses()
+      .subscribe(courses => {this.courses = courses;
+      });
     }
+    deleteUser(id: number): void {
+    this.userService.delete(id)
+      .subscribe();
+    this.refresh();
+    }
+    updateUser(id: number): void {
+    }
+    deleteCourse(id: number): void {
+    this.courseService.delete(id)
+      .subscribe();
+    this.refresh();
+    }
+    deleteTopic(id: number): void {
+    this.topicService.delete(id)
+      .subscribe();
+    this.refresh();
+    }
+
+  refresh(): void{
+    window.location.reload();
+  }
 }
 

@@ -4,6 +4,7 @@ import {Course} from '../../Shared/Models/course.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CourseService} from '../../Shared/Services/course.service';
 import {catchError, switchMap, take} from 'rxjs/operators';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-course-detail',
@@ -11,40 +12,32 @@ import {catchError, switchMap, take} from 'rxjs/operators';
   styleUrls: ['./course-detail.component.css']
 })
 export class CourseDetailComponent implements OnInit {
-  id: number;
-  course$: Observable<Course>;
-  err: any;
-  courses: Course[];
-
+ course: Course;
+ id: number;
+courseForm = new FormGroup({
+  name: new FormControl('')
+});
   constructor(private route: ActivatedRoute,
               private router: Router,
               private courseService: CourseService) {
   }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.courseService.getCourses()
-      .subscribe(
-        courses => {
-          this.courses = courses;
-        });
-    this.course$ = this.route.paramMap
-      .pipe(
-        take(1),
-        switchMap(params => {
-          this.id = +params.get('id');
-          return this.course$ = this.courseService.findById(this.id);
-        }),
-        catchError(this.err)
-      );
+  this.id = +this.route.snapshot.paramMap.get('id');
+  this.courseService.findById(this.id)
+    .subscribe(course => { this.course = course;
+    this.courseForm.patchValue({
+      name: course.name
+    });
+    });
   }
-  // tslint:disable-next-line:typedef
-  delete(){
-    this.courseService.delete(this.id)
-      .pipe(
-        take(1),
-        catchError(this.err)
-      )
-      .subscribe();
+  saveCourse(): void {
+  const course = this.courseForm.value;
+  course.id = this.id;
+  this.courseService.updateCourse( this.id, course)
+    .subscribe(() => {
+    this.router.navigateByUrl('/admin');
+  });
   }
+
 }

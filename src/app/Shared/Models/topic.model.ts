@@ -3,9 +3,9 @@ import {TopicComment} from './topic-comment.model';
 
 export interface Topic{
   id?: number;
-  name: string;
-  mainBody: string;
-  course: Course;
-  courseId: number;
+  name?: string;
+  mainBody?: string;
+  course?: Course;
+  courseId?: number;
   comments?: TopicComment[];
 }

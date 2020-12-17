@@ -22,6 +22,8 @@ import {TopicUpdateComponent} from './topic/topic-update/topic-update.component'
 import {TopicDetailComponent} from './topic/topic-detail/topic-detail.component';
 import {AdminGuard} from './Shared/guards/admin.guard';
 import {TeacherGuard} from './Shared/guards/teacher.guard';
+import {UserDetailsComponent} from './TypeUser/user/user-details/user-details.component';
+import {UserAddComponent} from './TypeUser/user/user-add/user-add.component';
 
 
 
@@ -30,16 +32,17 @@ routes = [
 
 
 
-
   {path: 'dashboard-teacher', component: DashboardTeacherComponent, canActivate: [AuthGuard, TeacherGuard]}, //
-
+  {path: 'user-details/:id', component: UserDetailsComponent},
+  {path: 'user-add', component: UserAddComponent},
   {path: 'dashboard', component: DashboardComponent}, // , canActivate: [AuthGuard]
+  {path: 'course-details/:id', component: CourseDetailComponent},
   {path: 'course-list', component: CourseListComponent}, // canActivate: [AuthGuard]
   {path: 'course-create', component: CourseCreateComponent}, // canActivate: [AuthGuard]
   {path: 'course-update', component: CourseUpdateComponent}, // canActivate: [AuthGuard]
   {path: 'course/:id', component: CourseDetailComponent}, // canActivate: [AuthGuard]
   {path: 'topic-page/:id', component: TopicPageComponent}, // canActivate: [AuthGuard]
-  {path: 'topic-detail', component: TopicDetailComponent}, // canActivate: [AuthGuard]
+  {path: 'topic-detail/:id', component: TopicDetailComponent}, // canActivate: [AuthGuard]
   {path: 'topic-update/:id', component: TopicUpdateComponent}, // canActivate: [AuthGuard]
   {path: 'topic-create', component: TopicCreateComponent}, // canActivate: [AuthGuard]
   {path: 'topic-list/:id', component: TopicListComponent},   // canActivate: [AuthGuard]

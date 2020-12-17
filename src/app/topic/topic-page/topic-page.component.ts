@@ -18,41 +18,44 @@ import {Usertype} from '../../Shared/Models/usertype.model';
 })
 export class TopicPageComponent implements OnInit {
 
+  topicId: number;
+  userId: number;
   user: User;
   topic: Topic;
 
   commentForm = new FormGroup({
     mainBody: new FormControl('')
     });
+  loading: boolean;
 
   constructor(private route: ActivatedRoute,
               private topicService: TopicService,
               private commentService: CommentService,
               private userService: UserService) { }
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.userService.findById(currentUser.id)
-      .subscribe(user => {this.user = user;
-       });
-    this.topicService.findById(id)
-     .subscribe(topic => {this.topic = topic;
-     });
+    this.topicId = +this.route.snapshot.paramMap.get('id');
+    this.userId = JSON.parse(localStorage.getItem('currentUser'))?.id;
+    this.refresh();
   }
   saveComment(): void {
     const date = new Date();
     const comment: TopicComment = {
-      mainBody: this.commentForm.value,
-      topic: this.topic,
-      user: this.user,
-      datePosted: new Date(date.getFullYear(), date.getMonth(), date.getDate())
+      mainBody: this.commentForm.get('mainBody').value,
+      topicId: this.topic?.id,
+      userId: this.user?.id,
+      datePosted: date.toJSON()
     };
+    this.loading = true;
     this.commentService.create(comment)
-      .subscribe();
-    this.topic.comments.push(comment);
-    this.topicService.update(this.topic.id, this.topic);
-    this.commentForm.reset();
+      .subscribe(() => {
+        this.refresh();
+        this.loading = false;
+      }, error => {
+        // save error and display
+        this.loading = false;
+      });
   }
+
   saveTopic(): void {
     if (this.user.topics == null){
       const topics: Topic[] = [];
@@ -65,6 +68,11 @@ export class TopicPageComponent implements OnInit {
     .subscribe();
   }
   refresh(): void{
-    window.location.reload();
+    this.userService.findById(this.userId)
+      .subscribe(user => {this.user = user;
+      });
+    this.topicService.findById(this.topicId)
+      .subscribe(topic => {this.topic = topic;
+      });
   }
 }
