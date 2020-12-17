@@ -3,8 +3,10 @@ import {Topic} from './topic.model';
 
 export interface TopicComment{
   id?: number;
-  mainBody: string;
-  datePosted: Date;
-  user: User;
-  topic: Topic;
+  mainBody?: string;
+  datePosted?: string;
+  user?: User;
+  userId?: number;
+  topic?: Topic;
+  topicId?: number;
 }

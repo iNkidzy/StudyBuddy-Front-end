@@ -57,8 +57,6 @@ export class LoginComponent implements OnInit {
         success => {
 
           this.navigate();
-
-          this.router.navigate(['/admin']);
           // somehow navigate to another page for admin AND .... Do if statements with routes
 
         },

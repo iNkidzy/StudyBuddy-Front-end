@@ -1,1 +1,16 @@
-<p>topic-create works!</p>
+<button routerLink="/admin">Back</button>
+
+<form [formGroup]="topicForm" (ngSubmit)="saveTopic()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <label>
+    Body:
+    <input type="text" formControlName="mainBody">
+  </label>
+
+  <button type="submit">Save Changes</button>
+</form>

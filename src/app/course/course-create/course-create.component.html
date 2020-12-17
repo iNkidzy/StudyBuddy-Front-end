@@ -1,12 +1,11 @@
-<div class="container-fixed" id="body">
-<h1 style="margin-left: 500px; padding:20px;">Create Course:</h1>
-<label style="margin-left: 460px; color: #5ee7df; padding: 50px;">
-  Name:
-  <input type="text" [formControl]="name">
-</label>
+<button routerLink="/admin">Back</button>
 
+<form [formGroup]="courseForm" (ngSubmit)="saveCourse()">
 
-<!-- <button style="color: #b490ca;background: #5ee7df;" (click)="save()"
-        [disabled]="creating">Save</button> -->
-</div>
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
 
+  <button type="submit">Save Changes</button>
+</form>

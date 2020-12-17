@@ -33,6 +33,8 @@ import {AuthenticationService} from './Shared/Services/authentication.service';
 import {AdminService} from './admin/shared/admin.service';
 import {AuthGuard} from './Shared/guards/auth.guard';
 import { NavbarComponent } from './Shared/Navbar/navbar/navbar.component';
+import { UserDetailsComponent } from './TypeUser/user/user-details/user-details.component';
+import { UserAddComponent } from './TypeUser/user/user-add/user-add.component';
 
 
 
@@ -62,7 +64,11 @@ import { NavbarComponent } from './Shared/Navbar/navbar/navbar.component';
 
     DashboardTeacherComponent,
 
-    NavbarComponent
+    NavbarComponent,
+
+    UserDetailsComponent,
+
+    UserAddComponent
 
   ],
   imports: [

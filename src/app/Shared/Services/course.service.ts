@@ -20,12 +20,12 @@ export class CourseService {
 
 // Create
   create(course: Course): Observable<Course> {
-    return this.http.post<Course>('https://localhost:51961/api/course', course);
+    return this.http.post<Course>('https://localhost:44301/api/course', course);
   }
 
   // GetAll
   getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>('https://localhost:51961/api/course'); // check
+    return this.http.get<Course[]>('https://localhost:44301/api/course'); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -35,12 +35,12 @@ export class CourseService {
 
   // GetCats byID
   findById(id: number): Observable<Course> {
-    return this.http.get<Course>('https://localhost:51961/api/course/' + id);
+    return this.http.get<Course>('https://localhost:44301/api/course/' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<Course> {
-    return this.http.delete<Course>('https://localhost:51961/api/course/' + id);
+    return this.http.delete<Course>('https://localhost:44301/api/course/' + id);
   }
 
 
@@ -56,7 +56,7 @@ export class CourseService {
     });
   }
   */
-  updateCourse(updatedCourse: Course, currentCourse: any): Observable<Course> {
-    return this.http.put<Course>( 'https://localhost:51961/api/course/' + updatedCourse.id, updatedCourse);
+  updateCourse(id: number, updatedCourse: Course): Observable<Course> {
+    return this.http.put<Course>( 'https://localhost:44301/api/course/' + id, updatedCourse);
   }
 }
