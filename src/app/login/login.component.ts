@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
               private authenticationService: AuthenticationService,
               private userService: UserService) { }
 
-              private authenticationService: AuthenticationService, userService: UserService) { }
 
 
   ngOnInit(): void {
@@ -70,7 +69,6 @@ export class LoginComponent implements OnInit {
   }
   navigate(): void{
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    debugger;
     if (currentUser.userType === 'User'){
       this.router.navigate(['/dashboard']);
     }

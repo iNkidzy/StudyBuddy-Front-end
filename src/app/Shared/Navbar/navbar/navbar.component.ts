@@ -9,14 +9,12 @@ import {User} from '../../Models/user.model';
 })
 export class NavbarComponent implements OnInit {
 
-  user: User;
-  constructor(private userService: UserService) { }
 
+  constructor(private userService: UserService) { }
+currentUserType: string;
   ngOnInit(): void {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.userService.findById(currentUser.id)
-      .subscribe(user => {this.user = user;
-      });
+    this.currentUserType = currentUser.type;
   }
 
 }
