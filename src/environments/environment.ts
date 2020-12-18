@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:44301/api/' // 44301 //51961
+  apiUrl: 'https://studybuddy-exam.azurewebsites.net/api/' // 44301 //51961
 };
 
 /*

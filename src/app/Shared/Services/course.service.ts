@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {Course} from '../Models/course.model';
 import {Topic} from '../Models/topic.model';
 import {Observable} from 'rxjs';
+import {environment} from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,12 +21,12 @@ export class CourseService {
 
 // Create
   create(course: Course): Observable<Course> {
-    return this.http.post<Course>('https://studybuddy-exam.azurewebsites.net/api/course', course);
+    return this.http.post<Course>(environment.apiUrl + 'course', course);
   }
 
   // GetAll
   getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>('https://studybuddy-exam.azurewebsites.net/api/course'); // check
+    return this.http.get<Course[]>(environment.apiUrl + 'course'); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -35,12 +36,12 @@ export class CourseService {
 
   // GetCats byID
   findById(id: number): Observable<Course> {
-    return this.http.get<Course>('https://studybuddy-exam.azurewebsites.net/api/course/' + id);
+    return this.http.get<Course>(environment.apiUrl + 'course');
   }
 
   // Delete by ID
   delete(id: number): Observable<Course> {
-    return this.http.delete<Course>('https://studybuddy-exam.azurewebsites.net/api/course/' + id);
+    return this.http.delete<Course>(environment.apiUrl + 'course' + id);
   }
 
 

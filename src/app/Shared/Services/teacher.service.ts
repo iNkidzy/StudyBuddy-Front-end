@@ -2,6 +2,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Teacher} from '../Models/teacher.model';
+import {environment} from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,12 +20,12 @@ export class TeacherService {
 
 // Create
   create(teacher: Teacher): Observable<Teacher> {
-    return this.http.post<Teacher>('https://studybuddy-exam.azurewebsites.net/api/user', teacher);
+    return this.http.post<Teacher>(environment.apiUrl + 'user', teacher);
   }
 
   // GetAllAdmins
   getTeachers(): Observable<Teacher[]> {
-    return this.http.get<Teacher[]>('https://studybuddy-exam.azurewebsites.net/api/user'); // check
+    return this.http.get<Teacher[]>(environment.apiUrl + 'user'); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -34,12 +35,12 @@ export class TeacherService {
 
   // GetCats byID
   findById(id: number): Observable<Teacher> {
-    return this.http.get<Teacher>('https://studybuddy-exam.azurewebsites.net/api/user/' + id);
+    return this.http.get<Teacher>(environment.apiUrl + 'user' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<Teacher> {
-    return this.http.delete<Teacher>('https://studybuddy-exam.azurewebsites.net/api/user/' + id);
+    return this.http.delete<Teacher>(environment.apiUrl + 'user' + id);
   }
 
   // Add Edit Teachers Here:
