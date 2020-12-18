@@ -11,7 +11,6 @@ import { NavbarUserComponent } from './Shared/Navbar/navbar-user/navbar-user.com
 import { NavbarTeacherComponent } from './Shared/Navbar/navbar-teacher/navbar-teacher.component';
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
-import { TeacherListComponent } from './TypeUser/teacher/teacher-list/teacher-list.component';
 import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { UserListComponent } from './TypeUser/user/user-list/user-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
@@ -49,7 +48,6 @@ import { UserAddComponent } from './TypeUser/user/user-add/user-add.component';
     NavbarAdminComponent,
     AdminListComponent,
     CourseListComponent,
-    TeacherListComponent,
     TopicListComponent,
     UserListComponent,
     DashboardComponent,

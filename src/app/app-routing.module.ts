@@ -5,7 +5,6 @@ import {LoginComponent} from './login/login.component';
 
 import {AdminListComponent} from './admin/admin-list/admin-list.component';
 import {WelcomeComponent} from './welcomes/welcome/welcome.component';
-import {TeacherListComponent} from './TypeUser/teacher/teacher-list/teacher-list.component';
 import {TopicListComponent} from './topic/topic-list/topic-list.component';
 import {UserListComponent} from './TypeUser/user/user-list/user-list.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
@@ -46,7 +45,6 @@ routes = [
   {path: 'topic-update/:id', component: TopicUpdateComponent}, // canActivate: [AuthGuard]
   {path: 'topic-create', component: TopicCreateComponent}, // canActivate: [AuthGuard]
   {path: 'topic-list/:id', component: TopicListComponent},   // canActivate: [AuthGuard]
-  {path: 'teacher-list', component: TeacherListComponent}, // delete ?
   {path: 'user', component: UserListComponent},  // delete ?
   {path: 'admin', component: AdminListComponent}, // canActivate: [AuthGuard]
   {path: 'welcome', component: WelcomeComponent},
