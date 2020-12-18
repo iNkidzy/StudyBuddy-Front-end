@@ -1,0 +1,28 @@
+<h4> Users:
+  <button routerLink="/user-add">New User</button>
+<div *ngFor="let u of users">
+  Id: {{u.id}} |
+  Name: {{u.name}} |
+  Email: {{u.email}} |
+  <button (click)="deleteUser(u.id)">Delete User</button>
+  <button routerLink="/user-details/{{u.id}}">Update User</button>
+</div>
+</h4>
+<h4> Courses:
+  <button routerLink="/course-create">New Course</button>
+<div *ngFor="let c of courses">
+  Id: {{c.id}} |
+  Name: {{c.name}} |
+  <button (click)="deleteCourse(c.id)">Delete Course</button>
+  <button routerLink="/course-details/{{c.id}}">Update Course</button>
+</div>
+</h4>
+<h4> Topics:
+  <button routerLink="/topic-create">New Topic</button>
+  <div *ngFor="let t of topics">
+    Id: {{t.id}} |
+    Name: {{t.name}} |
+    <button (click)="deleteTopic(t.id)">Delete Topic</button>
+    <button routerLink="/topic-detail/{{t.id}}">Update Topic</button>
+  </div>
+</h4>

@@ -1,0 +1,11 @@
+<button routerLink="/admin">Back</button>
+
+<form [formGroup]="courseForm" (ngSubmit)="saveCourse()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <button type="submit">Save Changes</button>
+</form>

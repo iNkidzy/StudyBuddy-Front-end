@@ -1,0 +1,24 @@
+<button routerLink="/admin">Back</button>
+
+<form [formGroup]="userForm" (ngSubmit)="saveUser()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <label>
+    Email:
+    <input type="text" formControlName="email">
+  </label>
+
+<label>
+    Type:
+    <select id="type" formControlName="type" placeholder="Select Type">
+      <option *ngFor="let k of typeKeys" [value]="k">
+        {{types[k]}}
+      </option>
+    </select>
+  </label>
+  <button type="submit">Save Changes</button>
+</form>
