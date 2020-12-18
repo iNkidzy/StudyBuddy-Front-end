@@ -12,7 +12,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(environment.apiUrl + 'token', {username, password})
+    return this.http.post<any>(environment.apiUrl + 'token/', {username, password})
       .pipe(map(response => {
         const token = response.token;
         const id = response.id;

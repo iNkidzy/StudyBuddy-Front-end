@@ -20,12 +20,12 @@ export class TeacherService {
 
 // Create
   create(teacher: Teacher): Observable<Teacher> {
-    return this.http.post<Teacher>(environment.apiUrl + 'user', teacher);
+    return this.http.post<Teacher>(environment.apiUrl + 'user/', teacher);
   }
 
   // GetAllAdmins
   getTeachers(): Observable<Teacher[]> {
-    return this.http.get<Teacher[]>(environment.apiUrl + 'user'); // check
+    return this.http.get<Teacher[]>(environment.apiUrl + 'user/'); // check
     // add authorization header with jwt token
     //  httpOptions.headers =
     //   httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
@@ -35,12 +35,12 @@ export class TeacherService {
 
   // GetCats byID
   findById(id: number): Observable<Teacher> {
-    return this.http.get<Teacher>(environment.apiUrl + 'user' + id);
+    return this.http.get<Teacher>(environment.apiUrl + 'user/' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<Teacher> {
-    return this.http.delete<Teacher>(environment.apiUrl + 'user' + id);
+    return this.http.delete<Teacher>(environment.apiUrl + 'user/' + id);
   }
 
   // Add Edit Teachers Here:
