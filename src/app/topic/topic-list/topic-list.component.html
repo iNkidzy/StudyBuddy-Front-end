@@ -1,6 +1,7 @@
 <div class="container-fluid" id="eggs" >
   <div class="row" >
-    <div class="col-lg-3 mx-auto bg-light border-dark" *ngFor="let t of course.topics" id="bacon">
+    <div class="col-lg-3 mx-auto bg-light border-dark" *ngFor="let t of topics" id="bacon">
+      <div *ngIf="t.courseId===id">
       <div class="card" id="tatters">
         <img src="assets\img\codestuff.jpg" class="card-img-top" alt="...">
         <mdb-card-body>
@@ -9,6 +10,7 @@
           </mdb-card-title>
           <a routerLinkActive="active" routerLink="/topic-page/{{t.id}}" class="btn btn-primary" id="pancakes">Go to Topic</a>
         </mdb-card-body>
+      </div>
       </div>
     </div>
   </div>

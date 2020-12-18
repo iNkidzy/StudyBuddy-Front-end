@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {TopicComment} from '../Models/topic-comment.model';
 import {Topic} from '../Models/topic.model';
 import {User} from '../Models/user.model';
+import {environment} from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,12 +23,12 @@ export class CommentService {
 // Create
 
   create(comment: TopicComment): Observable<TopicComment> {
-    return this.http.post<TopicComment>('https://studybuddy-exam.azurewebsites.net/api/comment/', comment);
+    return this.http.post<TopicComment>(environment.apiUrl + 'comment', comment);
   }
 
   // GetAllAdmins
   getComments(): Observable<Comment[]> {
-    return this.http.get<Comment[]>('https://studybuddy-exam.azurewebsites.net/api/comment'); // check
+    return this.http.get<Comment[]>(environment.apiUrl + 'comment'); // check
 
     // add authorization header with jwt token
     //  httpOptions.headers =
@@ -38,12 +39,12 @@ export class CommentService {
 
   // GetCats byID
   findById(id: number): Observable<TopicComment> {
-    return this.http.get<TopicComment>('https://studybuddy-exam.azurewebsites.net/api/comment/' + id);
+    return this.http.get<TopicComment>(environment.apiUrl + 'comment' + id);
   }
 
   // Delete by ID
   delete(id: number): Observable<TopicComment> {
-    return this.http.delete<TopicComment>('https://studybuddy-exam.azurewebsites.net/api/comment/' + id);
+    return this.http.delete<TopicComment>(environment.apiUrl + 'comment' + id);
   }
 
   // Add Edit Comment Here:

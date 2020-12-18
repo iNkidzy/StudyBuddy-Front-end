@@ -12,5 +12,14 @@
     <input type="text" formControlName="mainBody">
   </label>
 
+  <label>
+    Type:
+    <select id="courseId" formControlName="courseId" placeholder="Select Type">
+      <option *ngFor="let c of courses" [value]="c.id">
+        {{c.name}}
+      </option>
+    </select>
+  </label>
+
   <button type="submit">Save Changes</button>
 </form>
